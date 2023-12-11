@@ -1,0 +1,77 @@
+.background {
+    background-color: pink;
+    padding: 14px;
+}
+.number {
+    padding: 0px 5px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Rubik', sans-serif;
+}
+.fruit {
+    background-color: rgb(240, 147, 161);
+    padding: 8px;
+    margin: 10px;
+    color: white;
+}
+.fruit-text {
+    background-color: palevioletred;
+    padding: 8px 30px;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Rubik', sans-serif;
+}
+
+.day-background {
+    background-color: gainsboro;
+    padding: 14px;
+}
+.day-1 {
+    background-color: aqua;
+    padding: 8px;
+    color: black;
+    flex-grow: 1;
+}
+.day-2 {
+    background-color: rgb(2, 138, 138);
+    padding: 8px;
+    color: black;
+    flex-grow: 1;
+}
+.day-text {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Rubik', sans-serif;
+}
+.checkbox {
+    display: flex;
+    align-items: center;
+}
+#day-check {
+    margin-right: 10px;
+}
+#day-check:checked ~ .day-1 {
+    background-color: gray;
+    text-decoration: line-through;
+}
+#day-check:checked ~ .day-2 {
+    background-color: rgb(63, 63, 63);
+    text-decoration: line-through;
+}
+
+.gray {
+    color: gray;
+}
+.blue {
+    color: blue;
+}

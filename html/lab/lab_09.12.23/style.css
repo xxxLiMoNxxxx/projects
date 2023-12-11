@@ -1,0 +1,106 @@
+.load {
+    border: solid rgb(139, 139, 3) 3px;
+    width: 400px;
+    height: 65px;
+}
+.cyb {
+    width: 65px;
+    height: 65px;
+    background-color:rgb(139, 139, 3);
+    animation: myAnim 5s linear infinite;
+}
+@keyframes myAnim{
+    from{
+        margin-left: 0px;
+    }
+    to{
+        margin-left: 335px;
+    }
+}
+
+.img-heart {
+    filter: grayscale(100%);
+    scale: 0.5;
+}
+.img-heart:hover {
+    filter: grayscale(0%);
+    scale: 2;
+    animation: myAnimHeart 0.5s linear;
+}
+@keyframes myAnimHeart {
+    from{
+        scale: 0.5;
+        filter: grayscale(100%);
+    }
+    to{
+        scale: 2;
+        filter: grayscale(0%);
+    }
+}
+
+.text {
+    font-family: 'Hedvig Letters Sans', sans-serif;
+    text-align: center;
+}
+#pencil {
+    transform: rotate(90deg);
+    position: absolute;
+    bottom: -600px;
+    opacity: 0;
+    left: 885px;
+    animation: myAnimImg 2s linear forwards;
+    animation-delay: 0.5s;
+}
+
+#calc {
+    transform: rotate(335deg);
+    position: absolute;
+    bottom: -400px;
+    left: 200px;
+    opacity: 0;
+    animation: myAnimImg 2s linear forwards;
+    animation-delay: 1s;
+}
+
+#book {
+    transform: rotate(350deg);
+    position: absolute;
+    left: 600px;
+    opacity: 0;
+    animation: myAnimImg 2s linear forwards;
+    animation-delay: 1.5s;
+}
+
+#paper {
+    transform: rotate(15deg);
+    position: absolute;
+    left: 1000px;
+    opacity: 0;
+    animation: myAnimImg 2s linear forwards;
+    animation-delay: 2s;
+}
+
+#pallete {
+    transform: rotate(40deg);
+    position: absolute;
+    bottom: -400px;
+    right: 200px;
+    opacity: 0;
+    animation: myAnimImg 2s linear forwards;
+    animation-delay: 2.5s;
+}
+
+.img-wrapper {
+    position: relative;
+}
+
+@keyframes myAnimImg {
+    from {
+        margin-top: 100px;
+        opacity: 0;
+    }
+    to {
+        margin-top: 0px;
+        opacity: 1;
+    }
+}

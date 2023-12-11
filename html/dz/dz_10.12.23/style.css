@@ -1,0 +1,111 @@
+.border {
+    border-radius: 50%;
+    border: solid blue 3px;
+    width: 250px;
+    height: 250px;
+    position: relative;
+}
+.line-h {
+    height: 85px;
+    width: 5px;
+    background-color: blue;
+    position: absolute;
+    left: 120px;
+    top: 115px;
+    transform-origin: 50% 5px;
+    animation: animHours 12s linear infinite;
+}
+.line-min {
+    height: 105px;
+    width: 5px;
+    background-color: blue;
+    position: absolute;
+    left: 120px;
+    top: 115px;
+    transform-origin: 50% 5px;
+    animation: animHours 6s linear infinite;
+}
+.circle {
+    border-radius: 50%;
+    background-color: rgb(3, 3, 122);
+    height: 12px;
+    width: 12px;
+    position: absolute;
+    left: 117px;
+    top: 114px;
+}
+@keyframes animHours {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.container {
+    display: flex;
+    position: relative;
+}
+.box-left {
+    width: 350px;
+    height: 200px;
+    border: solid purple;
+    background-color: rgb(202, 2, 202);
+    transform-origin: left center;
+    transition: transform 0.5s linear;
+}
+.box-right {
+    width: 350px;
+    height: 200px;
+    border: solid purple;
+    background-color: rgb(202, 2, 202);
+    transform-origin: right center;
+    transition: transform 0.5s linear;
+}
+.container:hover .box-left {
+    transform: perspective(1000px) rotateY(60deg);
+}
+.container:hover .box-right {
+    transform: perspective(1000px) rotateY(-60deg);
+}
+.text {
+    position: absolute;
+    left: 280px;
+    top: 460px;
+    font-size: 50px;
+    font-family: 'Kanit', sans-serif;
+}
+
+.block-1 {
+    display: flex;
+}
+.block-2 {
+    display: flex;
+}
+.text-background-1 {
+    height: 183px;
+    width: 276px;
+    background-color: antiquewhite;
+}
+.text-money-1 {
+    font-family: 'Kanit', sans-serif;
+    position: absolute;
+    bottom: 135px;
+    left: 7px;
+    font-size: 15px;
+}
+.text-background-2 {
+    height: 183px;
+    width: 276px;
+    background-color: antiquewhite;
+    position: absolute;
+    left: 284px;
+}
+.text-money-2 {
+    font-family: 'Kanit', sans-serif;
+    position: absolute;
+    bottom: 70px;
+    left: 7px;
+    font-size: 15px;
+}

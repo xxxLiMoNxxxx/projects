@@ -1,0 +1,402 @@
+.background {
+    background-color: #F5F5F5;
+}
+
+.title {
+    text-align: center;
+    color: #483D8B;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Rubik', sans-serif;
+}
+.act {
+    color: #738697;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Rubik', sans-serif;
+}
+.text {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Rubik', sans-serif;
+}
+.number-card{
+    font-size: 35px;
+    position: relative;
+    bottom: 265px;
+    left: 6px;
+}
+.number-simvol{
+    font-size: 25px;
+    position: relative;
+    bottom: 10px;
+}
+.player {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Rubik', sans-serif;
+}
+.player2 {
+    position: relative;
+    bottom: 3630px;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Rubik', sans-serif;
+}
+.simvol-card1 {
+    font-size: 65px;
+    position: relative;
+    bottom: 50px;
+    left: 60px;
+}
+.simvol-card2 {
+    font-size: 65px;
+    position: relative;
+    top: 30px;
+    left: 60px;
+}
+.simvol-card3 {
+    font-size: 65px;
+    position: relative;
+    bottom: 50px;
+    left: 90px;
+}
+.simvol-card4 {
+    font-size: 65px;
+    position: relative;
+    left: 130px;
+    bottom: 125px;
+}
+.simvol-card5 {
+    font-size: 65px;
+    position: relative;
+    left: 130px;
+    bottom: 130px;
+}
+.simvol-card6 {
+    font-size: 65px;
+    position: relative;
+    left: 130px;
+    bottom: 130px;
+}
+.simvol-card7 {
+    font-size: 65px;
+    position: relative;
+    bottom: 350px;
+    left: 50px;
+}
+.simvol-card8 {
+    font-size: 65px;
+    position: relative;
+    bottom: 280px;
+    left: 90px;
+}
+.simvol-card9 {
+    font-size: 65px;
+    position: relative;
+    bottom: 430px;
+    left: 90px;
+}
+.simvol-card10 {
+    font-size: 65px;
+    position: relative;
+    left: 50px;
+    bottom: 430px;
+}
+.simvol-card11 {
+    font-size: 65px;
+    position: relative;
+    bottom: 580px;
+    left: 50px;
+}
+.simvol-card12 {
+    font-size: 65px;
+    position: relative;
+    left: 50px;
+    bottom: 50px;
+}
+.simvol-card13 {
+    font-size: 65px;
+    position: relative;
+    bottom: 125px;
+    left: 90px;
+}
+.simvol-card14 {
+    font-size: 65px;
+    position: relative;
+    bottom: 200px;
+    left: 130px;
+}
+.simvol-card15 {
+    font-size: 65px;
+    position: relative;
+    bottom: 125px;
+    left: 50px;
+}
+.simvol-card16 {
+    font-size: 65px;
+    position: relative;
+    left: 90px;
+    bottom: 200px;
+}
+.simvol-card17 {
+    font-size: 65px;
+    position: relative;
+    bottom: 275px;
+    left: 130px;
+}
+.simvol-card18 {
+    font-size: 65px;
+    position: relative;
+    top: 10px;
+    left: 80px;
+}
+.simvol-card19 {
+    font-size: 65px;
+    position: relative;
+    left: 60px;
+    bottom: 50px;
+}
+.simvol-card20 {
+    font-size: 65px;
+    position: relative;
+    left: 60px;
+    bottom: 50px;
+}
+.simvol-card21 {
+    font-size: 65px;
+    position: relative;
+    left: 60px;
+    bottom: 50px
+}
+.simvol-card22 {
+    font-size: 65px;
+    position: relative;
+    top: 10px;
+    left: 74px;
+}
+.simvol-card23 {
+    font-size: 65px;
+    position: relative;
+    bottom: 50px;
+    left: 90px;
+}
+.simvol-card24 {
+    font-size: 65px;
+    position: relative;
+    left: 130px;
+    bottom: 125px;
+}
+.simvol-card25 {
+    font-size: 65px;
+    position: relative;
+    left: 130px;
+    bottom: 130px;
+}
+.simvol-card26 {
+    font-size: 65px;
+    position: relative;
+    left: 130px;
+    bottom: 130px;
+}
+.simvol-card27 {
+    font-size: 65px;
+    position: relative;
+    bottom: 350px;
+    left: 50px;
+}
+.simvol-card28 {
+    font-size: 65px;
+    position: relative;
+    bottom: 280px;
+    left: 90px;
+}
+.simvol-card29 {
+    font-size: 65px;
+    position: relative;
+    bottom: 430px;
+    left: 90px;
+}
+.simvol-card30 {
+    font-size: 65px;
+    position: relative;
+    left: 50px;
+    bottom: 430px;
+}
+.simvol-card31 {
+    font-size: 65px;
+    position: relative;
+    bottom: 580px;
+    left: 50px;
+}
+.simvol-card32 {
+    font-size: 65px;
+    position: relative;
+    bottom: 773px;
+    left: 90px;
+}
+.simvol-card33 {
+    font-size: 65px;
+    position: relative;
+    bottom: 50px;
+    left: 90px;
+}
+.simvol-card34 {
+    font-size: 65px;
+    position: relative;
+    left: 130px;
+    bottom: 125px;
+}
+.simvol-card35 {
+    font-size: 65px;
+    position: relative;
+    left: 130px;
+    bottom: 130px;
+}
+.simvol-card36 {
+    font-size: 65px;
+    position: relative;
+    left: 130px;
+    bottom: 130px;
+}
+.simvol-card37 {
+    font-size: 65px;
+    position: relative;
+    bottom: 350px;
+    left: 50px;
+}
+.simvol-card38 {
+    font-size: 65px;
+    position: relative;
+    bottom: 280px;
+    left: 90px;
+}
+.simvol-card39 {
+    font-size: 65px;
+    position: relative;
+    left: 50px;
+    bottom: 430px;
+}
+.simvol-card40 {
+    font-size: 65px;
+    position: relative;
+    bottom: 431px;
+    left: 50px;
+}
+.card-background2 {
+    position: relative;
+    bottom: 489px;
+    left: 200px;
+    color: red;   
+}
+.card-background3 {
+    position: relative;
+    bottom:1504px;
+    left: 400px;
+    color: red;   
+}
+.card-background4 {
+    position: relative;
+    bottom:2293px;
+    left: 600px;
+}
+.card-background5 {
+    position: relative;
+    bottom:2973px;
+    left: 800px;
+}
+.card-background6 {
+    position: relative;
+    bottom:3579px;
+    left: 1000px;
+}
+.card-background7 {
+    position: relative;
+    bottom:3625px;
+    color: red;
+}
+.card-background8 {
+    position: relative;
+    bottom:4189px;
+    left: 200px;
+}
+.card-background9 {
+    position: relative;
+    bottom:4603px;
+    left: 400px;
+}
+.card-background10 {
+    position: relative;
+    bottom:5958px;
+    left: 600px;
+    color: red;
+}
+.card-background11 {
+    position: relative;
+    bottom:6297px;
+    left: 800px;
+}
+.card-background12 {
+    position: relative;
+    bottom:7236px;
+    left: 1000px;
+    color: red;
+}
+.simvols-card2 {
+    position: relative;
+    right: 15px;
+}
+.simvols-card3 {
+    position: relative;
+    right: 15px;
+}
+.simvols-card4 {
+    position: relative;
+    right: 15px;
+}
+.simvols-card5 {
+    position: relative;
+    right: 15px;
+}
+.simvols-card6 {
+    position: relative;
+    right: 15px;
+    top: 17px;
+}
+.card-dama {
+    position: relative;
+    bottom: -268px;
+    left: 2px;
+}
+.card-valet {
+    position: relative;
+    bottom: -268px;
+    left: 2px;
+}
+.card-king {
+    position: relative;
+    bottom: -268px;
+    left: 2px;
+}
+.cards {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    position: relative;
+    bottom: 7400px;
+}
+.card {
+    padding: 10px;
+    background: #E0E0E0;
+    font-size: 60px;
+    color: black;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+.card-red {
+    color: red;
+}
