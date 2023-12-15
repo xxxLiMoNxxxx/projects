@@ -44,7 +44,7 @@
 }
 
 .container {
-    display: flex;
+    display: inline-flex;
     position: relative;
 }
 .box-left {
@@ -77,35 +77,39 @@
     font-family: 'Kanit', sans-serif;
 }
 
-.block-1 {
-    display: flex;
+.block {
+    display: inline-flex;
+    height: 183px;
+    transition: filter;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
 }
-.block-2 {
-    display: flex;
-}
-.text-background-1 {
+.text-background {
     height: 183px;
     width: 276px;
     background-color: antiquewhite;
 }
-.text-money-1 {
-    font-family: 'Kanit', sans-serif;
-    position: absolute;
-    bottom: 135px;
-    left: 7px;
+.text-money {
+    margin-top: 75px;
+    margin-left: 5px;
     font-size: 15px;
-}
-.text-background-2 {
-    height: 183px;
-    width: 276px;
-    background-color: antiquewhite;
-    position: absolute;
-    left: 284px;
-}
-.text-money-2 {
     font-family: 'Kanit', sans-serif;
-    position: absolute;
-    bottom: 70px;
-    left: 7px;
-    font-size: 15px;
+}
+.img-money {
+    scale: 1;
+    transition: scale;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.img-3 {
+    overflow: hidden;
+}
+a {
+    display: inline-flex;
+}
+.block:hover {
+    filter: brightness(40%)
+}
+.block:hover .img-money {
+    scale: 1.2
 }
