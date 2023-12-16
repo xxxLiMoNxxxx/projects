@@ -1,0 +1,22 @@
+table {
+  border-collapse: collapse;
+}
+th {
+  background-color: lightblue;
+  width: 100px;
+  height: 45px;
+}
+tr:nth-child(2n) {
+    background-color: rgb(209, 209, 209);
+}
+td:first-child {
+  background-color: lightblue;
+}
+thead th {
+    position: sticky;
+    top: 0px;
+}
+tbody th {
+    position: sticky;
+    left: 0px;
+}
