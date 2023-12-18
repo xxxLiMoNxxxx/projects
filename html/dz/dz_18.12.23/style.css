@@ -2,25 +2,24 @@ body {
     margin: 0;
 }
 header {
-    color: white;
+    background-size: cover;
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
-    display:inline-flex;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     z-index: 100;
+    background-color: white;
     position: fixed;
 }
 .title-text, .pages-main, .pages-show, .pages-musem {
     padding: 16px 12px;
 }
-.left {
-    justify-content: left;
-    width: 15%;
-}
 .right {
-    justify-content: right;
-    width: 85%;
-    display: inline-flex;
+    display: flex;
+    align-items: center;
 }
 .title {
     color: white;
@@ -107,7 +106,7 @@ header {
 }
 a {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 
@@ -119,9 +118,6 @@ a {
     z-index: 10;
     padding: 16px 12px;
     font-family: 'Poppins', sans-serif;
-    padding-bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
 }
 .pages-show ul{
     position: relative;
@@ -150,7 +146,6 @@ a {
     display: block;
     font-size: 20px;
     box-sizing: border-box;
-    color: white;
 }
 .pages-show ul li ul{
     position: absolute;
