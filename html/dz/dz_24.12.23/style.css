@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+}
+.main-1 {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    border: 1px solid black; 
+}
+.image {
+    z-index: 2;
+    position: absolute;
+    top: 25%;
+    right: 25%;
+}
+.image img {
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+.image::before {
+    content: '';
+    border: 5px solid pink;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    transform: rotate(45deg);
+}
+.image::after {
+    content: '';
+    border: 5px solid pink;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    transform: rotate(45deg);
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+}
