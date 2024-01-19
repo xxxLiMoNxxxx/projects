@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>max-height</title>
+        <style>
+            body {
+                font-family: 'Bookman Old Style', 'Times New Roman', serif;
+                width: 80%;
+                margin: 20px auto;
+            }
+
+            div {
+                width: 600px;
+                padding: 5px;
+                margin-bottom: 12px;
+                text-align: center;
+            }
+            .bordered {
+                border-width: 5px;
+                border-color: blueviolet;
+            }
+            .side1 {
+                border-style: double
+            }
+            .side2 {
+                border-style: double solid;
+                }
+            .side3 {
+                border-style: dashed solid dotted;
+            }
+            .side4 {
+                border-style: solid ridge double none;
+            }
+        </style>
+    </head>     
+    <body>
+        <h3>1-4 values</h3>
+        <div class="bordered side1">border-style: double ;</div>
+        <div class="bordered side2">border-style: double solid ;</div>
+        <div class="bordered side3">border-style: dashed solid dotted ;</div>
+        <div class="bordered side4">border-style: solid ridge double none ;</div>
+    </body>
+</html>

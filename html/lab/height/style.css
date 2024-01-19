@@ -1,0 +1,20 @@
+body {
+    background-color: #ccc;
+    font-family: Tahoma, sans-serif;
+}   
+.wrap {
+    width: 1000px;
+    margin: 20px auto;
+}
+    
+.block {
+    width: 440px;
+    float: left;
+    margin: 20px;
+    padding: 10px;
+    background-color: #fff;
+}
+    
+.fixed {
+    height: 200px;
+}

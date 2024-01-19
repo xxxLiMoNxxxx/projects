@@ -1,5 +1,7 @@
 *{
     box-sizing: border-box;
+    margin: 0;
+    font-weight: 200;
 }
 .main-1 {
     position: relative;
@@ -27,6 +29,7 @@
     width: 200px;
     height: 200px;
     transform: rotate(45deg);
+    transition: all 1s;
 }
 .image::after {
     content: '';
@@ -40,4 +43,70 @@
     transform: rotate(45deg);
     border-top-color: transparent;
     border-bottom-color: transparent;
+    transition: all 1s;
 }
+.image:hover::after, .image:hover::before {
+    transform: rotate(135deg);
+}
+.hover {
+    position: absolute;
+    left: 430px;
+    top: 200px
+}
+
+
+main {
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    column-gap: 15px;
+    padding: 15px 0;
+}
+.all {
+    position: relative;
+}
+.text {
+    width: 350px;
+    height: 150px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    padding: 15px;
+    font-family: 'Kanit', sans-serif;
+    transition: all 1s;
+}
+.block-on-hover {
+    display: none;
+}
+.all:hover .text {
+    height: 349px;
+    text-align: center;
+    background-color:  #00000070;
+    color: white;
+    padding: 0;
+}
+.all:hover .text h3 {
+    background-color: orange;
+    color: black;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.all:hover .text .block-on-hover {
+    display: block;
+    margin-bottom: 10px;
+}
+.all:hover .text h5 {
+    color: white;
+    padding: 7px;
+}
+.text h5 {
+    color: gray;
+}
+.text h4 {
+    font-size: 14px;
+}
+.text h3 {
+    font-weight: 500;
+}
+
