@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video id="video" controls>
+        <source src="videos/video.mp4" type="video/mp4">
+    </video>
+    <script src="socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        const video = document.getElementById('video');
+
+        video.onplay = () => {
+            socket.emit('play');
+        };
+
+        video.onpause = () => {
+            socket.emit('pause');
+        };
+
+        video.onseeked = () => {
+            socket.emit('seeked', video.currentTime);
+        };
+
+        socket.on('play', () => {
+            video.play();
+        });
+
+        socket.on('pause', () => {
+            video.pause();
+        });
+
+        socket.on('seeked', (time) => {
+            video.currentTime = time;
+        });
+    </script>
+</body>
+</html>
