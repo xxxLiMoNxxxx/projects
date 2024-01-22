@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sync Video</title>
+</head>
+<body>
+    <video id="syncVideo" width="640" height="360" controls>
+        <source src="https://dl.dropboxusercontent.com/scl/fi/c4lylu97ya2771kca3ydk/video.mp4?rlkey=7oiq8opx795bo2irljm9nhd7m&dl=0" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <div id="chat">
+        <ul id="messages"></ul>
+        <input id="message_input" autocomplete="off">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.1/socket.io.js"></script>
+    <script>
+        var socket = io.connect('https://a6cd-188-163-15-231.ngrok-free.app/', { transports: ['websocket'] });
+
+        var video = document.getElementById('syncVideo');
+        var messages = document.getElementById('messages');
+        var lastTime = 0;
+
+        video.addEventListener('play', function() {
+            socket.emit('video_event', { 'type': 'play', 'time': video.currentTime });
+        });
+
+        video.addEventListener('pause', function() {
+            socket.emit('video_event', { 'type': 'pause', 'time': video.currentTime });
+        });
+
+        video.addEventListener('seeked', function() {
+            if (Math.abs(video.currentTime - lastTime) > 0.5) {
+                socket.emit('video_event', { 'type': 'seek', 'time': video.currentTime });
+                lastTime = video.currentTime;
+            }
+        });
+
+        socket.on('current_time', function() {
+            socket.emit('video_event', { 'type': 'sync', 'time': video.currentTime });
+        });
+
+        socket.on('video_event', function(data) {
+            if (data.type === 'sync') {
+                video.currentTime = data.time;
+            } else if (data.type === 'play') {
+                video.currentTime = data.time;
+                video.play();
+            } else if (data.type === 'pause') {
+                video.currentTime = data.time;
+                video.pause();
+            } else if (data.type === 'seek') {
+                video.currentTime = data.time;
+            }
+        });
+
+        socket.on('message', function(msg) {
+            var li = document.createElement('li');
+            li.appendChild(document.createTextNode(msg));
+            messages.appendChild(li);
+        });
+
+        function sendMessage() {
+            var message_input = document.getElementById('message_input');
+            socket.emit('message', message_input.value);
+            message_input.value = '';
+        }
+    </script>
+</body>
+</html>
