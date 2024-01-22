@@ -7,37 +7,42 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <video id="video" controls>
+    <video id="myVideo" controls>
         <source src="videos/video.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
     </video>
-    <script src="socket.io/socket.io.js"></script>
+
+    <script src="https://togetherjs.com/togetherjs-min.js"></script>
     <script>
-        const socket = io();
-        const video = document.getElementById('video');
+        TogetherJSConfig_on_ready = function () {
+            var video = document.getElementById('myVideo');
 
-        video.onplay = () => {
-            socket.emit('play');
+            TogetherJS.hub.on('play', function () {
+                video.play();
+            });
+
+            TogetherJS.hub.on('pause', function () {
+                video.pause();
+            });
+
+            TogetherJS.hub.on('seek', function (msg) {
+                video.currentTime = msg.time;
+            });
+
+            video.addEventListener('play', function () {
+                TogetherJS.send({type: 'play'});
+            });
+
+            video.addEventListener('pause', function () {
+                TogetherJS.send({type: 'pause'});
+            });
+
+            video.addEventListener('seeked', function () {
+                TogetherJS.send({type: 'seek', time: video.currentTime});
+            });
         };
-
-        video.onpause = () => {
-            socket.emit('pause');
-        };
-
-        video.onseeked = () => {
-            socket.emit('seeked', video.currentTime);
-        };
-
-        socket.on('play', () => {
-            video.play();
-        });
-
-        socket.on('pause', () => {
-            video.pause();
-        });
-
-        socket.on('seeked', (time) => {
-            video.currentTime = time;
-        });
     </script>
+
+    <button onclick="TogetherJS(this); return false;">Start TogetherJS</button>
 </body>
 </html>
