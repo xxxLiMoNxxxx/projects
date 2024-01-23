@@ -8,22 +8,31 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div id="player-container">
-        <canvas class="orb-canvas"></canvas>
-        <video id="syncVideo" width="640" height="360" controls>
-            <source src="https://dl.dropboxusercontent.com/scl/fi/c4lylu97ya2771kca3ydk/video.mp4?rlkey=7oiq8opx795bo2irljm9nhd7m&dl=0" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div id="message-overlay"></div>
-    </div>
-    <form onsubmit="sendMessage(event)">
-        <div id="chat">
-            <ul id="messages"></ul>
-            <input id="message_input" autocomplete="off">
-            <button type="submit">Відправити</button>
+    <canvas class="orb-canvas"></canvas>
+    <div class="overlay">
+        <div class="overlay__inner">
+            <div class="video_container">
+                <video id="syncVideo" controls>
+                    <source src="https://dl.dropboxusercontent.com/scl/fi/c4lylu97ya2771kca3ydk/video.mp4?rlkey=7oiq8opx795bo2irljm9nhd7m&dl=0" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </div>
-    </form>
-
+        <form id="nicknameForm" onsubmit="setNickname(event)">
+            <div class="nickname">
+                <label for="nickname">Введите ваш ник:</label>
+                <input id="nickname" required>
+                <button type="submit">Установить</button>
+            </div>
+        </form>
+        <form id="chatForm" onsubmit="sendMessage(event)" style="display: none;">
+            <div id="chat">
+                <ul id="messages"></ul>
+                <input id="message_input" autocomplete="off">
+                <button type="submit">Отправить</button>
+            </div>
+        </form>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.1/socket.io.js"></script>
     <script>
         var socket = io.connect(window.location.origin, { transports: ['websocket'] });
@@ -71,12 +80,21 @@
             messages.appendChild(li);
         });
 
-        function sendMessage(e) {
-            e.preventDefault()
-            console.log(e)
-            var message_input = document.getElementById('message_input');
-            socket.emit('message', message_input.value);
-            message_input.value = '';
+        function setNickname(event) {
+            event.preventDefault();
+            var nicknameInput = document.getElementById('nickname');
+            nickname = nicknameInput.value;
+            document.getElementById('nicknameForm').style.display = 'none';
+            document.getElementById('chatForm').style.display = 'block';
+            document.getElementById('nickname').disabled = true;
+        }
+
+        function sendMessage(event) {
+            event.preventDefault();
+            var messageInput = document.getElementById('message_input');
+            var message = nickname + ': ' + messageInput.value;
+            socket.emit('message', message);
+            messageInput.value = '';
         }
     </script>
     <script type="module" src="{{ url_for('static', filename='js.js') }}"></script>

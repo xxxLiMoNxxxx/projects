@@ -41,7 +41,18 @@ main {
     display: flex;
     justify-content: space-between;
 }
-
+.nickname {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    max-width: 300px;
+    overflow: auto;
+}
 #chat {
     position: absolute;
     top: 0;
@@ -71,8 +82,15 @@ main {
 }
 
 #syncVideo {
-    position: relative;
     z-index: 0;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    border-radius: 25px;
+}
+.video_container {
+    position: relative;
+    width: 100%;
+    height: auto;
 }
 :root {
     --dark-color: hsl(var(--hue), 100%, 9%);
@@ -137,10 +155,6 @@ background: rgba(255, 255, 255, 0.375);
 box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
 border-radius: 2rem;
 border: 1px solid rgba(255, 255, 255, 0.125);
-}
-
-.overlay__inner {
-max-width: 36rem;
 }
 
 .overlay__title {
@@ -234,7 +248,7 @@ align-items: center;
 
 @media only screen and (max-width: 840px) {
 body {
-    padding: 1.5rem;
+    padding: 0;
 }
 
 .overlay {
@@ -257,7 +271,7 @@ body {
 
 @media only screen and (max-width: 600px) {
 .overlay {
-    padding: 1.5rem;
+    padding: 5px;
 }
 
 .overlay__btns {
