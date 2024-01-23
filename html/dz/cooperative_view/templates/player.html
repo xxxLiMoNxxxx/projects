@@ -3,23 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sync Video</title>
+    <title>Кімната</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <video id="syncVideo" width="640" height="360" controls>
-        <source src="https://dl.dropboxusercontent.com/scl/fi/c4lylu97ya2771kca3ydk/video.mp4?rlkey=7oiq8opx795bo2irljm9nhd7m&dl=0" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    
-    <div id="chat">
-        <ul id="messages"></ul>
-        <input id="message_input" autocomplete="off">
-        <button onclick="sendMessage()">Send</button>
+    <div id="player-container">
+        <canvas class="orb-canvas"></canvas>
+        <video id="syncVideo" width="640" height="360" controls>
+            <source src="https://dl.dropboxusercontent.com/scl/fi/c4lylu97ya2771kca3ydk/video.mp4?rlkey=7oiq8opx795bo2irljm9nhd7m&dl=0" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div id="message-overlay"></div>
     </div>
+    <form onsubmit="sendMessage(event)">
+        <div id="chat">
+            <ul id="messages"></ul>
+            <input id="message_input" autocomplete="off">
+            <button type="submit">Відправити</button>
+        </div>
+    </form>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.1/socket.io.js"></script>
     <script>
-        var socket = io.connect('https://a6cd-188-163-15-231.ngrok-free.app/', { transports: ['websocket'] });
+        var socket = io.connect(window.location.origin, { transports: ['websocket'] });
 
         var video = document.getElementById('syncVideo');
         var messages = document.getElementById('messages');
@@ -64,11 +71,14 @@
             messages.appendChild(li);
         });
 
-        function sendMessage() {
+        function sendMessage(e) {
+            e.preventDefault()
+            console.log(e)
             var message_input = document.getElementById('message_input');
             socket.emit('message', message_input.value);
             message_input.value = '';
         }
     </script>
+    <script type="module" src="{{ url_for('static', filename='js.js') }}"></script>
 </body>
 </html>

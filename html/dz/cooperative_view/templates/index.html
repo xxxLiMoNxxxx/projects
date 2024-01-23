@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная страница</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Головна сторінка</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <main>
@@ -16,12 +16,11 @@
             <span class="text-gradient">кімната?</span>
             </h1>
             <div class="buttons">
-                <button name="button-create">Зробити кімнату</button>
-                <button name="button-create">Приєднатися до кімнати</button>
+                <a href="player.html"><button name="button-join">Приєднатися до кімнати</button></a>
             </div>
         </div>
     </div>
     </main>
-    <script type="module" src="js.js"></script>
+    <script type="module" src="{{ url_for('static', filename='js.js') }}"></script>
 </body>
 </html>
