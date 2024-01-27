@@ -7,12 +7,19 @@ CORS(app)  # Activate CORS
 app.config['SECRET_KEY'] = 'your_secret_key'
 socketio = SocketIO(app, async_mode='gevent', cors_allowed_origins="*")
 
+# Сохраняем текущее время видео на сервере
+current_video_time = 0
+
 @socketio.on('connect')
 def handle_connect():
-    emit('current_time', broadcast=True)
+    # Передаем текущее время видео новому пользователю
+    emit('current_time', {'time': current_video_time})
 
 @socketio.on('video_event')
 def handle_video_event(data):
+    global current_video_time
+    if 'time' in data:
+        current_video_time = data['time']
     emit('video_event', data, broadcast=True)
 
 @socketio.on('message')

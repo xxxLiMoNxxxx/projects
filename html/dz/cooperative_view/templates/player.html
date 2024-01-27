@@ -11,6 +11,7 @@
     <canvas class="orb-canvas"></canvas>
     <div class="overlay">
         <div class="overlay__inner">
+            <div id="pauseOverlay">Відео на паузі</div>
             <div class="video_container">
                 <video id="syncVideo" controls>
                     <source src="https://dl.dropboxusercontent.com/scl/fi/c4lylu97ya2771kca3ydk/video.mp4?rlkey=7oiq8opx795bo2irljm9nhd7m&dl=0" type="video/mp4">
@@ -20,18 +21,20 @@
         </div>
         <form id="nicknameForm" onsubmit="setNickname(event)">
             <div class="nickname">
-                <label for="nickname">Введите ваш ник:</label>
+                <label for="nickname">Введіть ваш нік:</label>
                 <input id="nickname" required>
-                <button type="submit">Установить</button>
+                <button type="submit">Встановити</button>
             </div>
         </form>
-        <form id="chatForm" onsubmit="sendMessage(event)" style="display: none;">
+        <form id="chatForm" onsubmit="sendMessage(event)" style="display: none;"> 
             <div id="chat">
+                <div id="newMessageNotification" class="hidden">Нове повідомлення!</div>
                 <ul id="messages"></ul>
                 <input id="message_input" autocomplete="off">
-                <button type="submit">Отправить</button>
+                <button type="submit" onclick="sendMessage()">Відправити</button>
             </div>
         </form>
+        
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.1/socket.io.js"></script>
     <script>
@@ -40,13 +43,21 @@
         var video = document.getElementById('syncVideo');
         var messages = document.getElementById('messages');
         var lastTime = 0;
+        var isSeeking = false;
+        var isPauseOverlayVisible = false;
 
         video.addEventListener('play', function() {
-            socket.emit('video_event', { 'type': 'play', 'time': video.currentTime });
+            if (!video.paused) {
+                socket.emit('video_event', { 'type': 'play' });
+            }
         });
 
         video.addEventListener('pause', function() {
-            socket.emit('video_event', { 'type': 'pause', 'time': video.currentTime });
+            if (video.paused) {
+                socket.emit('video_event', { 'type': 'pause' });
+                isPauseOverlayVisible = true;
+                showPauseOverlay();
+            }
         });
 
         video.addEventListener('seeked', function() {
@@ -56,29 +67,72 @@
             }
         });
 
-        socket.on('current_time', function() {
-            socket.emit('video_event', { 'type': 'sync', 'time': video.currentTime });
-        });
-
-        socket.on('video_event', function(data) {
-            if (data.type === 'sync') {
-                video.currentTime = data.time;
-            } else if (data.type === 'play') {
-                video.currentTime = data.time;
-                video.play();
-            } else if (data.type === 'pause') {
-                video.currentTime = data.time;
-                video.pause();
-            } else if (data.type === 'seek') {
+        socket.on('current_time', function(data) {
+            if (!video.paused && !isSeeking) {
                 video.currentTime = data.time;
             }
         });
 
-        socket.on('message', function(msg) {
-            var li = document.createElement('li');
-            li.appendChild(document.createTextNode(msg));
-            messages.appendChild(li);
+        socket.on('video_event', function(data) {
+            if (data.type === 'play') {
+                if (video.paused) {
+                    video.play().catch(function() {});
+                }
+                if (isPauseOverlayVisible) {
+                    hidePauseOverlay();
+                    isPauseOverlayVisible = false;
+                }
+            } else if (data.type === 'pause') {
+                if (!video.paused) {
+                    video.pause();
+                    isPauseOverlayVisible = true;
+                    showPauseOverlay();
+                }
+            } else if (data.type === 'seek') {
+                isSeeking = true;
+                video.currentTime = data.time;
+            }
         });
+
+        video.addEventListener('playing', function() {
+            if (isSeeking) {
+                video.play().catch(function() {});
+                isSeeking = false;
+            }
+        });
+
+
+        socket.on('message', function(data) {
+            var li = document.createElement('li');
+            var currentTime = new Date();
+            var hours = currentTime.getHours();
+            var minutes = currentTime.getMinutes();
+            var seconds = currentTime.getSeconds();
+            var timeString = hours + ':' + minutes + ':' + seconds;
+
+            li.appendChild(document.createTextNode('[' + timeString + '] ' + data));
+
+            messages.appendChild(li);
+            messages.classList.add('flash');
+
+            setTimeout(function() {
+                messages.classList.remove('flash');
+            }, 2000);
+            showNewMessageNotification();
+        });
+
+        function showNewMessageNotification() {
+            var notification = document.getElementById('newMessageNotification');
+            notification.style.display = 'block';
+
+            notification.style.animation = 'slideIn 0.5s ease, slideOut 0.5s ease 2.5s forwards';
+
+            setTimeout(function() {
+                notification.style.animation = '';
+                notification.style.display = 'none';
+            }, 3000);
+        }
+
 
         function setNickname(event) {
             event.preventDefault();
@@ -95,6 +149,14 @@
             var message = nickname + ': ' + messageInput.value;
             socket.emit('message', message);
             messageInput.value = '';
+        }
+        function showPauseOverlay() {
+            var overlay = document.getElementById('pauseOverlay');
+            overlay.style.display = 'block';
+        }
+        function hidePauseOverlay() {
+            var overlay = document.getElementById('pauseOverlay');
+            overlay.style.display = 'none';
         }
     </script>
     <script type="module" src="{{ url_for('static', filename='js.js') }}"></script>
