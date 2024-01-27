@@ -3,7 +3,7 @@ from flask_socketio import SocketIO, emit
 from flask_cors import CORS
 
 app = Flask(__name__, static_folder='static', static_url_path='/static')
-CORS(app)  # Activate CORS
+CORS(app)
 app.config['SECRET_KEY'] = 'your_secret_key'
 socketio = SocketIO(app, async_mode='gevent', cors_allowed_origins="*")
 

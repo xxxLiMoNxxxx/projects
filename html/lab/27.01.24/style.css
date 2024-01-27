@@ -1,0 +1,49 @@
+main {
+    display: flex;
+}
+.card{
+    width: 250px;
+    border-radius: 10px;
+    background-color: rgb(50, 168, 236);
+    margin: 10px;
+}
+.card p{
+    padding: 10px;
+    margin: 0;
+    border-bottom: 1px solid rgb(90, 90, 221);
+}
+.card p:last-child{
+    border: none;
+}
+.main {
+    background-color: rgb(90, 90, 221);
+    border-radius: 10px 10px 0 0;
+}
+.text {
+    width: 800px;
+}
+@media only screen and (max-width: 800px) {
+    main {
+        display:block;
+    }
+    .menu {
+        display: flex;
+    }
+    .text {
+        width: 600px;
+    }
+    .card {
+        width: 300px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .text {
+        width: 400px;
+    }
+    .menu {
+        display: block;
+    }
+    .card {
+        width: 95%;
+    }
+}
