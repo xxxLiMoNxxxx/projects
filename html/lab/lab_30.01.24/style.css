@@ -1,0 +1,40 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+img {
+    width: 75px;
+    height: 75px;
+}
+ol{
+    list-style-type: none;
+    padding: 0;
+}
+ol li {
+    display: flex;
+    align-items: center;
+}
+ol li:first-child {
+    justify-content: center;
+}
+menu {
+    position:fixed;
+    left: 0;
+    background-color: gray;
+    height: 100%;
+    padding: 0;
+    top: 0;
+    margin-top: 0;
+    color: white;
+    transition: all 0.5s;
+    width: 75px;
+}
+main {
+    margin-left: 180px;
+}
+menu:hover {
+    width: 175px;
+}
+.edit:hover {
+    background-color: rgb(75, 75, 75);
+}

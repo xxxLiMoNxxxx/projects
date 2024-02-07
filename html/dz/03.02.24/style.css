@@ -1,0 +1,25 @@
+.download {
+    width: 860px;
+    background: rgb(204, 204, 204);
+    display: flex;
+    height: 141px;
+}
+.img {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 18px;
+}
+.progres {
+    margin: 18px 18px 18px 0;
+    width: 400px;
+    background-color: rgb(148, 148, 197);
+    border: 1px solid rgb(92, 92, 228);
+    height: 25px;
+    display: flex;
+    align-items: center;
+}
+.text {
+    justify-content: space-between;
+    display: flex;
+}

@@ -1,0 +1,60 @@
+* {
+    color: white;
+}
+html {
+    height: 100%;
+}
+header {
+    background-color: rgb(201, 4, 201);
+}
+header h2 {
+    padding: 60px 40px;
+}
+.menu {
+    background-color: purple;
+}
+main h2 {
+    padding: 20px 40px;
+}
+.all-blocks {
+    display: flex;
+    float: left;
+    width: 100%;
+}
+.aside-1 {
+    width: 100%;
+    background-color: rgb(141, 70, 141);
+    height: 100px;
+}
+.aside-1 h2 {
+    margin: 0;
+}
+.aside-2 {
+    width: 100%;
+    background-color: rgb(141, 70, 141);
+    height: 175px;
+}
+.left-blocks {
+    width: 15%;
+    margin: 0 15px 0 0;
+}
+.important-block {
+    background-color: rgb(141, 70, 141);
+    width: 72%;
+    align-items: center;
+}
+.section {
+    width: 93%;
+    background-color: plum;
+    margin: 0 40px 10px 40px;
+    height: 125px;
+}
+.aside-3 {
+    width: 13%;
+    background-color: rgb(141, 70, 141);
+    margin: 0 0 0 15px;
+    text-orientation:upright;
+    writing-mode: vertical-rl;
+    display: flex;
+    align-items: center;
+}
