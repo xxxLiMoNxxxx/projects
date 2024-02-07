@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+}
+body {
+    background-color: #090613;
+}
+.mb-230 {
+    margin-bottom: 230px;
+}
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+.banner {
+    background: url(images/bg-banner.png) center no-repeat;
+    background-size: cover;
+    height: 600px;
+}
+.h-100 {
+    height: 100%;
+}
+.banner-wrapper {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+.banner-title {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 150%;
+}
+.banner-description {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 130%;
+    margin-bottom: 32px;
+}
+.button {
+    border-radius: 10px;
+    background: rgb(45, 124, 241);
+    width: 210px;
+    border: none;
+    display: inline-flex;
+    padding: 16px 24px;
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 120%;
+    cursor: pointer;
+}
+.quastion-title {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 39px;
+    margin-bottom: 15px;
+}
+.quastion-description {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 150%;
+}
+.quastion-wrapper {
+    padding: 36px 30px;
+    border-radius: 15px;
+    background: url(images/bg-promotional-code.png) center no-repeat, rgb(27, 34, 47);
+    background-size: cover;
+}
+.tutorial {
+    align-items: center;
+}
+.page-title {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 49px;
+    text-align: center;
+}
+.page-description {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    margin-top: 12px;
+    margin-bottom: 90px;
+    text-align: center;
+}
+.steps {
+    margin-top: 90px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+.step {
+    max-width: 310px;
+}
+.steps-description {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 1%;
+    margin-bottom: 54px;
+    min-height: 100px;
+}
+.steps-title {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 150%;
+}
+a {
+    color: rgb(30,155,251);
+    text-decoration: none;
+}
+.perfect {
+    text-align: center;
+}
+.propertys-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+.propertys-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+.property {
+    width: 479px;
+}
+.property-title {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 150%;
+}
+.property-description {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+}
+.films {
+    display: flex;
+    align-items: center;
+}
+.offer-content, .offer-img{
+    max-width: 50%;
+    align-items: center;
+}
+.offer-title {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 150%;
+    margin-bottom: 30px;
+}
+.offer-subtitle {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    margin-bottom: 12px;
+}
+.offer-description {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    max-width: 490px;
+    margin-bottom: 25px;
+}
+.tv {
+    display: flex;
+    align-items: center;
+}
+.chanel {
+    width: 125px;
+    height: 125px;
+    border-radius: 10px;
+    background: rgb(49, 61, 84);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s;
+}
+.offer-chanels {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    width: 50%;
+    margin-right: 95px;
+}
+.chanel:hover {
+    box-shadow: 0px 2px 40px 0px rgba(30, 155, 251, 0.5);
+}
+.devices {
+    display: flex;
+    align-items: center;
+}
+.offer-content img {
+    margin-right: 14px;
+}
+.offer-content img:last-child {
+    margin-right: 0;
+}
+.premium {
+    display: flex;
+    align-items: center;
+}
+.blur {
+    filter: blur(300px);
+    background: rgb(30, 155, 251);
+    width: 353.94px;
+    height: 355.01px;
+}
