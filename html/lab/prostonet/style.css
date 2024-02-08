@@ -43,7 +43,6 @@ body {
 .button {
     border-radius: 10px;
     background: rgb(45, 124, 241);
-    width: 210px;
     border: none;
     display: inline-flex;
     padding: 16px 24px;
@@ -53,7 +52,10 @@ body {
     font-weight: 600;
     line-height: 120%;
     cursor: pointer;
+    min-width: 210px;
+    align-self: flex-start;
 }
+
 .quastion-title {
     color: rgb(255, 255, 255);
     font-family: Montserrat;
@@ -161,7 +163,21 @@ a {
 }
 .offer-content, .offer-img{
     max-width: 50%;
-    align-items: center;
+}
+.blur {
+    position: relative;
+    z-index: 1;
+}
+.blur::after {
+    filter: blur(300px);
+    background: rgb(30, 155, 251);
+    width: 353.94px;
+    height: 355.01px;
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    z-index: -1;
 }
 .offer-title {
     color: rgb(255, 255, 255);
@@ -225,10 +241,93 @@ a {
 .premium {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
-.blur {
-    filter: blur(300px);
-    background: rgb(30, 155, 251);
-    width: 353.94px;
-    height: 355.01px;
+
+.quality-description {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+}
+.quality-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.quality-content, .quality-img{
+    max-width: 50%;
+}
+ol{
+    list-style-type: none;
+    padding: 0;
+}
+.quality-description img {
+    margin-right: 20px;
+}
+.reviews-title {
+    background: url(images/img_reviews.png) center no-repeat;
+    height: 480px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    margin-bottom: 88px;
+}
+.review {
+    border-radius: 10px;
+    background: rgb(49, 61, 84);
+    width: 303px;
+    padding: 20px 15px;
+    position: relative;
+    margin-bottom: 40px;
+}
+.review-content {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+}
+.square {
+    background: #313d54;
+    bottom: -10px;
+    content: "";
+    height: 20px;
+    left: 25px;
+    position: absolute;
+    transform: rotate(45deg);
+    width: 20px;
+}
+.reviews-content {
+    gap: 70px;
+    display: flex;
+}
+.photo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+}
+.photo img {
+    margin-right: 12px;
+}
+.photo-name {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 150%;
+}
+.photo-city {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 150%;
+}
+.phone {
+    text-align: center;
 }
