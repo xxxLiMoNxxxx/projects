@@ -141,7 +141,7 @@ a {
     justify-content: space-between;
 }
 .property {
-    width: 479px;
+    max-width: 479px;
 }
 .property-title {
     color: rgb(255, 255, 255);
@@ -161,7 +161,7 @@ a {
     display: flex;
     align-items: center;
 }
-.offer-content, .offer-img{
+.offer-content, .offer-img, .quality-content, .quality-img{
     max-width: 50%;
 }
 .blur {
@@ -171,12 +171,12 @@ a {
 .blur::after {
     filter: blur(300px);
     background: rgb(30, 155, 251);
-    width: 353.94px;
-    height: 355.01px;
-    position: absolute;
     content: "";
-    left: 0;
-    top: 0;
+    position: absolute;
+    width: 212.59px;
+    height: 213.23px;
+    left: 53.78px;
+    top: 0px;
     z-index: -1;
 }
 .offer-title {
@@ -208,11 +208,10 @@ a {
     display: flex;
     align-items: center;
 }
-.chanel {
+.offer-chanels img {
     width: 125px;
     height: 125px;
     border-radius: 10px;
-    background: rgb(49, 61, 84);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -225,7 +224,7 @@ a {
     width: 50%;
     margin-right: 95px;
 }
-.chanel:hover {
+.offer-chanels img:hover {
     box-shadow: 0px 2px 40px 0px rgba(30, 155, 251, 0.5);
 }
 .devices {
@@ -237,6 +236,10 @@ a {
 }
 .offer-content img:last-child {
     margin-right: 0;
+}
+.offer-img img, .quality-img img {
+    height: auto;
+    width: 100%;
 }
 .premium {
     display: flex;
@@ -259,9 +262,6 @@ a {
     align-items: center;
     justify-content: space-between;
 }
-.quality-content, .quality-img{
-    max-width: 50%;
-}
 ol{
     list-style-type: none;
     padding: 0;
@@ -280,7 +280,7 @@ ol{
 .review {
     border-radius: 10px;
     background: rgb(49, 61, 84);
-    width: 303px;
+    width: 100%;
     padding: 20px 15px;
     position: relative;
     margin-bottom: 40px;
@@ -330,4 +330,254 @@ ol{
 }
 .phone {
     text-align: center;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+}
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+    .banner {
+        background: url(images/bg-banner-mb.png) center no-repeat;
+        background-size: cover;
+        height: 532px;
+    }
+    .banner-title {
+        color: rgb(255, 255, 255);
+        font-family: Montserrat;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 150%;
+    }
+    .banner-description {
+        color: rgb(255, 255, 255);
+        font-family: Montserrat;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 120%;
+        text-align: center;
+    }
+    .button {
+        padding: 12px 24px;
+        color: rgb(255, 255, 255);
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 120%;
+        margin-bottom: 60px;
+        align-self: auto;
+    }
+    .banner-wrapper {
+        justify-content: end;
+        align-items: center;
+    }
+    .quastion-wrapper {
+        background: url(images/mob-bg-promotional-code.png) center no-repeat, rgb(27, 34, 47);
+        background-size: cover;
+        height: 577px;
+        padding: 45px 16px;
+    }
+    .mb-230 {
+        margin-bottom: 90px;
+    }
+    .quastion-title {
+        color: rgb(255, 255, 255);
+        font-family: Montserrat;
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 30px;
+        text-align: center;
+    }
+    .quastion-description {
+        color: rgb(255, 255, 255);
+        font-family: Montserrat;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 130%;
+        text-align: center;
+    }
+    .steps {
+        flex-direction: column;
+        margin-top: 50px;
+        align-items: center;
+    }
+    .steps-description {
+        margin-bottom: 20px;
+        min-height: auto;
+        color: rgb(255, 255, 255);
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: 1%;
+        text-align: center;
+    }
+    .steps-title {
+        margin-top: 40px;
+    }
+    .propertys-top {
+        flex-direction: column;
+        align-items: center;
+    }
+    .propertys-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+    .page-title {
+        color: rgb(255, 255, 255);
+        font-family: Montserrat;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 29px;
+        text-align: center;
+    }
+    .page-description {
+        color: rgb(255, 255, 255);
+        font-family: Montserrat;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 140%;
+        margin-bottom: 40px;
+    }
+    .property-title {
+        color: rgb(255, 255, 255);
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 150%;
+    }
+    .property-description {
+        color: rgb(255, 255, 255);
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 150%;
+        margin-bottom: 45px;
+    }
+    br {
+        display: none;
+    }
+    .films {
+        display: block;
+    }
+    .offer-content, .offer-img, .quality-content, .quality-img {
+        max-width: 100%;
+        text-align: center;
+    }
+    .offer-img img, .quality-img img {
+        width: 100%;
+        height: 100%;
+    }
+    .offer-title {
+        color: rgb(255, 255, 255);
+        font-family: Montserrat;
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 150%;
+        margin-bottom: 18px;
+    }
+    .offer-subtitle {
+        color: rgb(255, 255, 255);
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 150%;
+    }
+    .offer-description {
+        color: rgb(255, 255, 255);
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 150%;
+    }
+    .offer-chanels img {
+        width: 58px;
+        height: 58px;
+    }
+    .tv {
+        flex-direction: column-reverse;
+    }
+    .offer-chanels {
+        width: auto;
+        margin-right: 0;
+    }
+    .devices {
+        display: block;
+    }
+    .premium {
+        flex-direction: column-reverse;
+    }
+    .offer-content img {
+        margin-right: 0;
+    }
+    .quality-wrapper {
+        display: block;
+    }
+    .quality-description {
+        color: rgb(255, 255, 255);
+        font-family: Montserrat;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 150%;
+        letter-spacing: 0.5%;
+        text-align: left;
+    }
+    .reviews-title {
+        background: url(images/img_reviews_mb.png) no-repeat top;
+        height: 315px;
+    }
+    .reviews-content {
+        gap: 0;
+        flex-direction: column;
+    }
+    .review {
+        width: auto;
+    }
+    .review-item:nth-child(2n) .photo {
+        justify-content: end;
+    }
+    .review-item:nth-child(2n) .square {
+        left: unset;
+        right: 25px;
+    }    
+    .review-content {
+        color: rgb(255, 255, 255);
+        font-family: Montserrat;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 150%;
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+}
+@media (max-width: 576px) {
+    .container {
+        max-width: 395px;
+    }
+}
+@media (max-width: 425px) {
+    .container {
+        max-width: 345px;
+    }
+    .quastion-description {
+        font-size: 22px;
+    }
+}
+@media (max-width: 375px) {
+    .container {
+        max-width: 290px;
+    }
+    .quastion-description {
+        font-size: 18px;
+    }
+    .quality-description img {
+        width: 20px;
+    }
 }
