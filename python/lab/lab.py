@@ -33,7 +33,6 @@ root.geometry("800x600")
 root.minsize(50, 50)
 root.resizable(False, False)
 root.title("Застосунок")
-root.iconbitmap("projects_python\lab\ico.ico")
 
 label_email = tk.Label(root, text="Введіть свій email", font="Arial 12", foreground="black")
 entry_email = tk.Entry(root)
