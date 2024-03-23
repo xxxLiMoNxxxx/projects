@@ -15,7 +15,7 @@ def key_press(event):
     w = root.winfo_width ()+200
     root.geometry('{}x100+{}+{}' . format (w, x, y) )
 
-root = Tk ()
+root = Tk()
 
 root.geometry('200x100+150+100')
 root.title("Практична робота")

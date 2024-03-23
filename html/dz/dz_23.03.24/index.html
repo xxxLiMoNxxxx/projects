@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card-input">
+        <div class="card-title">CREDIT CARD DETAILS</div>
+        <form>
+            <ul>
+                <li>
+                    <label for="card-number">Card Number</label>
+                </li>
+                <li>
+                    <input type="number" placeholder="1234 5678 9012 3456" id="card-number" required name="card-number" class="input">
+                </li>
+                <li>
+                    <label for="card-name">Name On Card</label>
+                </li>
+                <li> 
+                    <input type="text" placeholder="Name Surname" id="card-name" required name="name-on-card" class="input">
+                </li>
+                <li>
+                    <div class="label-card">
+                        <label for="card-date">Date Expiry</label>
+                        <label for="card-cvv">CVV / CVN</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="input-card">
+                        <input type="number" placeholder="02" id="card-date" required name="date-on-card" class="input-date">
+                        <input type="number" placeholder="2017" id="card-date" required name="date-on-card" class="input-date">
+                        <input type="number" placeholder="***" id="card-cvv" required name="date-on-card" class="input-cvv">
+                    </div>
+                </li>
+            </ul>
+        </form>
+    </div>
+</body>
+</html>
