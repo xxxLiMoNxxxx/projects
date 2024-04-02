@@ -1,0 +1,10 @@
+.form-control, .form-select {
+    max-width: 425px;
+}
+.img {
+    margin-right: 200px;
+    margin-left: 50px;
+}
+.card-body {
+    max-width: 500px;
+}

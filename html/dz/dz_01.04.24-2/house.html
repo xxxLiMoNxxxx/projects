@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <header class="d-flex justify-content-between mb-5">
+            <a href="#" class="d-flex m-2 align-items-center text-decoration-none text-dark">
+                <img src="images/ad.png" width="55" alt="brand">
+                <div class="brand-name ms-3 fs-5">AD`S BOARD</div>
+            </a>
+            <a href="#" class="d-flex align-items-center text-decoration-none">
+                <button class="btn btn-warning d-flex me-3"><div class="fw-bold me-2">+</div>New ad</button>
+                <div class="profile d-flex align-items-center">
+                    <img src="images/av_64.png" width="50" alt="account" class="me-2">
+                    My profile
+                </div>
+            </a>
+        </header>
+        <main>
+            <form class="d-flex bg-info rounded mb-5">
+                <div class="input-group m-3 ">
+                    <label for="search" class="input-group-text"><img src="images/search.png" width="20" alt="search"></label>
+                    <input type="text" class="form-control me-3 rounded-end" id="search" placeholder="11 999 345 ads near you" required name="search" value="wardrobe">
+                    <label for="city" class="input-group-text rounded-start"><img src="images/city.png" width="20" alt="search"></label>
+                    <input type="text" class="form-control me-3 rounded-end" id="city" placeholder="Kiev, Kiev area" required name="city" value="Kiev, Shevchenkovskiy">
+                    <select class="form-select rounded-start" id="inputGroupSelect01" onchange="window.location.href = this.options[this.selectedIndex].value">
+                        <option value="http://127.0.0.1:5500/html/dz/dz_01.04.24-2/index.html">Home</option>
+                        <option value="http://127.0.0.1:5500/html/dz/dz_01.04.24-2/sofa.html">🛋️ Sofa</option>
+                        <option value="http://127.0.0.1:5500/html/dz/dz_01.04.24-2/car.html">🚘 For car</option>
+                        <option value="http://127.0.0.1:5500/html/dz/dz_01.04.24-2/garden.html">🌳 For garden</option>
+                        <option selected>🏠 For house</option>
+                    </select>
+                  </div>
+            </form>
+            <div class="card mb-3">
+                <div class="row g-0">
+                  <div class="col-md-4 d-flex justify-content-center">
+                    <img src="images/kitchen.webp" width="256" class="img-fluid rounded-start" alt="furniture_1">
+                  </div>
+                  <div class="col-md-8 d-flex justify-content-between">
+                    <div class="card-body d-flex h-100 flex-column justify-content-between text-primary">
+                      <h5 class="card-title">Кухня Дуб сонома Грейд ЛДСП 1,8 м</h5>
+                      <div class="card-description d-flex">
+                        <p class="card-text d-flex me-3"><img src="images/city.png" width="21" height="21" alt="city" class="me-2"><small class="text-body-secondary">Kiev, Shevchenkovskiy</small></p>
+                        <p class="card-text d-flex"><img src="images/clock.jpg" width="21" height="21" alt="city" class="me-2"><small class="text-body-secondary">Today at 10:45</small></p>
+                      </div>
+                    </div>
+                    <h2 class="me-5 mt-3">3192грн</h2>
+                  </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="row g-0">
+                  <div class="col-md-4 d-flex justify-content-center">
+                    <img src="images/tv.webp" width="256" class="img-fluid rounded-start" alt="furniture_1">
+                  </div>
+                  <div class="col-md-8 d-flex justify-content-between">
+                    <div class="card-body d-flex h-100 flex-column justify-content-between text-primary">
+                      <h5 class="card-title">Стенка Орлеанс дуб крафт табако / бетон индастри</h5>
+                      <div class="card-description d-flex">
+                        <p class="card-text d-flex me-3"><img src="images/city.png" width="21" height="21" alt="city" class="me-2"><small class="text-body-secondary">Kiev, Shevchenkovskiy</small></p>
+                        <p class="card-text d-flex"><img src="images/clock.jpg" width="21" height="21" alt="city" class="me-2"><small class="text-body-secondary">Today at 10:45</small></p>
+                      </div>
+                    </div>
+                    <h2 class="me-5 mt-3">7149.60грн</h2>
+                  </div>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="row g-0">
+                  <div class="col-md-4 d-flex justify-content-center">
+                    <img src="images/bed.jpeg" width="256" class="img-fluid rounded-start" alt="furniture_1">
+                  </div>
+                  <div class="col-md-8 d-flex justify-content-between">
+                    <div class="card-body d-flex h-100 flex-column justify-content-between text-primary">
+                      <h5 class="card-title">Кровать раскладная Мария М New в ассортименте 70x185 см</h5>
+                      <div class="card-description d-flex">
+                        <p class="card-text d-flex me-3"><img src="images/city.png" width="21" height="21" alt="city" class="me-2"><small class="text-body-secondary">Kiev, Shevchenkovskiy</small></p>
+                        <p class="card-text d-flex"><img src="images/clock.jpg" width="21" height="21" alt="city" class="me-2"><small class="text-body-secondary">Today at 10:45</small></p>
+                      </div>
+                    </div>
+                    <h2 class="me-5 mt-3">2250грн</h2>
+                  </div>
+                </div>
+            </div>
+        </main>
+        <hr>
+        <footer class="mt-5 d-flex">
+            <img src="images/ad.png" alt="brand-nameds" class="img">
+            <div class="row">
+                <a class="col-4 text-decoration-none">datraeyeray</a>
+                <a class="col-4 text-decoration-none">datraeyeray</a>
+                <a class="col-4 text-decoration-none">datraeyeray</a>
+                <a class="col-4 text-decoration-none">datraeyeray</a>
+                <a class="col-4 text-decoration-none">datraeyeray</a>
+                <a class="col-4 text-decoration-none">datraeyeray</a>
+                <a class="col-4 text-decoration-none">datraeyeray</a>
+                <a class="col-4 text-decoration-none">datraeyeray</a>
+                <a class="col-4 text-decoration-none">datraeyeray</a>
+                <a class="col-4 text-decoration-none">datraeyeray</a>
+                <a class="col-4 text-decoration-none">datraeyeray</a>
+                <a class="col-4 text-decoration-none">datraeyeray</a>
+                <a class="col-4 text-decoration-none">datraeyeray</a>
+                <a class="col-4 text-decoration-none">datraeyeray</a>
+                <a class="col-4 text-decoration-none">datraeyeray</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
