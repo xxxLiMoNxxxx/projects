@@ -15,6 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">   <script type="text/javascript" src="js/popup.js"></script>
       <script type="text/javascript" src="js/Repo.js"></script>
       <script type="text/javascript" src="js/functions.js"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@21.0.0/build/css/intlTelInput.css">
    </head>
 	<script type="text/javascript">
 	
@@ -58,8 +59,7 @@
           document.getElementById('alert_privacy').style.display = 'block'; 
             return false;
           }
-       
-          if  (   (	(telefono.length == 10 ) ||  (telefono.length == 11 ) )  &&    ((telefono.substr(0,1))==3 )  ) 
+          if  (   (	(telefono.length == 10 ) ||  (telefono.length == 11 ) || (telefono.length == 12) || (telefono.length == 13))) 
         
          {
             
@@ -94,7 +94,7 @@
 
                        return false ;
           } 
-          document.getElementById('alert_telefono').style.display = 'none';
+          document.getElementById('alert_telefono').style.display = 'block';
           return pass   ;
 
        }
@@ -292,17 +292,15 @@ che ha superato il trilione di dollari</p>
             <tr>
                <td>Ti contatteremo a breve per
 spiegarti come attivare il tuo account ed iniziare
-la tua formazione</td><td><img src="img/callcenter.png" style="    width: 6vw;">   </td>
+la tua formazione</td><td>
+</td>
       </tr>
       </table>
-							<div class="input-box">
-  <span class="prefix"> <img src="flag.png" style="width: 20px;
-    display: inline;
-    margin: 9%;">  +39 </span>
- 
-  <input type="number" pattern="\d*" class="mezzo" id="telefono" name="telefono" placeholder="Telefono" value="" required="">
+      <div class="input-box">
+         <input type="tel" placeholder="Telefono" class="mezzo" id="telefono" name="telefono" >
+      </div>
+  
                             
-</div>
 <div class="privacy">
 																							<input type="checkbox" name="c1" id="c1" value="si">
 																							<div class="ptesto">
@@ -571,3 +569,23 @@ sliderEl.addEventListener("input", (event) => {
  
 
 </script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@21.0.0/build/js/intlTelInput.min.js"></script>
+                        <script>
+                           const input = document.querySelector("#telefono");
+                           const iti = window.intlTelInput(input, {
+                              initialCountry: "auto",
+                              nationalMode: false,
+                              geoIpLookup: callback => {
+                                 fetch("https://ipapi.co/json")
+                                       .then(res => res.json())
+                                       .then(data => callback(data.country_code))
+                                       .catch(() => callback("us"));
+                              },
+                              utilsScript: "/intl-tel-input/js/utils.js?1712140609544" // just for formatting/placeholders etc
+                           });
+
+                           input.addEventListener('blur', function() {
+                              const phoneNumber = iti.getNumber();
+                              console.log(phoneNumber); // Номер в формате международного телефона
+                           });
+                        </script>

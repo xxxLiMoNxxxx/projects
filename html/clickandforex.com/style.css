@@ -145,9 +145,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 #telefono {
     font-size: 21px;
-    padding: 0;
-    margin: 0;
-    padding-left: 2%;
 }
 
 .input-box {
@@ -156,11 +153,8 @@ input[type=number]::-webkit-outer-spin-button {
     width: 100%;
     background: #fff;
     border-radius: 13px;
-    padding-left: 0.5rem;
-    overflow: hidden;
     background: #dedede;
     font-family: sans-serif;
-
     position: static;
     margin-top: 2%;
     background: white;
@@ -173,6 +167,10 @@ input[type=number]::-webkit-outer-spin-button {
     color: #3a3a3a;
     display: flex;
     margin-right: 4%;
+}
+.iti {
+    width: 100%;
+    border-radius: 13px;
 }
 
 .input-box input {
