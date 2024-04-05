@@ -1,591 +1,563 @@
 <html lang="it">
-   <head>
-      <title>TopLead - Amazon Full Ai Investimento </title>
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-      <link rel="icon" href="img/logo_advice.png" type="image/gif" />
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-      <link rel="stylesheet" type="text/css" href="style.css" />
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">   <script type="text/javascript" src="js/popup.js"></script>
-      <script type="text/javascript" src="js/Repo.js"></script>
-      <script type="text/javascript" src="js/functions.js"></script>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@21.0.0/build/css/intlTelInput.css">
-   </head>
-	<script type="text/javascript">
-	
-	function apri_privacy()
-	{
-		if ( document.getElementById("panel_privacy").style.display !='block')
-		document.getElementById("panel_privacy").style.display  ='block' ; 
-		
-		else document.getElementById("panel_privacy").style.display  ='none' ; 
+<head>
+    <title>TopLead - Amazon Full Ai Investimento </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <link rel="icon" href="img/logo_advice.png" type="image/gif"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/style.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+          rel="stylesheet">
+    <script type="text/javascript" src="assets/js/popup.min.js"></script>
+    <script type="text/javascript" src="assets/js/functions.min.js"></script>
+    <script type="text/javascript" src="assets/js/Repo.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@21.0.0/build/css/intlTelInput.css">
+</head>
+<script type="text/javascript">
+    function apri_privacy() {
+        if (document.getElementById("panel_privacy").style.display != 'block')
+            document.getElementById("panel_privacy").style.display = 'block';
+        else document.getElementById("panel_privacy").style.display = 'none';
+    }
 
-	}
-	
-	function chiudi()
-	{
-	 
-		document.getElementById("panel_privacy").style.display  ='none' ; 
-		
-		 
+    function chiudi() {
+        document.getElementById("panel_privacy").style.display = 'none';
+    }
+</script>
+<script>
+    function controllotelefono() {
+        telefono = document.getElementById('telefono').value;
+        pass = false;
+        telefono = iti.getNumber();
+        document.getElementById('alert_telefono').style.display = 'none';
+        document.getElementById('alert_telefono_doppio').style.display = 'none';
+        document.getElementById('alert_privacy').style.display = 'none';
 
-	}
-	</script> 
-   <script>
-      
-      function  controllotelefono()
-       { 
- 
-
-	      telefono = document.getElementById('telefono').value;
- 
-         
-         pass = false;
-       
-          telefono =   document.getElementById('telefono').value;
-          document.getElementById('alert_telefono').style.display = 'none';   
-          document.getElementById('alert_telefono_doppio').style.display = 'none';   
-          document.getElementById('alert_privacy').style.display = 'none';   
-
-          if  (!document.getElementById('c1').checked) {
-
-            
-          document.getElementById('alert_privacy').style.display = 'block'; 
+        if (!document.getElementById('c1').checked) {
+            document.getElementById('alert_privacy').style.display = 'block';
             return false;
-          }
-          if  (   (	(telefono.length == 10 ) ||  (telefono.length == 11 ) || (telefono.length == 12) || (telefono.length == 13))) 
-        
-         {
-            
-          
-           
+        }
 
-               $.ajax
-                                        ({				
-                                            type: "POST",					
-                                            url: "check_telefono.php",												
-                                            data: "telefono="+telefono,	
-                                            			
-                                            success: function(msg){      if (msg.trim()=='doppione') {
-                                           pass =  false;
-                                              document.getElementById('alert_telefono_doppio').style.display = 'block';
-                                               document.getElementById('telefono').style.backgroundColor = '#ffd1ce';return pass ;
- 
-                                            }
-                                             else   {   document.getElementById('alert_telefono_doppio').style.display = 'none';  document.getElementById('telefono').style.backgroundColor = '#e8f0fe';	 invia_form();  }
-                                            }	,
-                                            error: function(){alert('Ajax error controllo telefono') ; 
-                                          }
-                                        });	 
-                                        document.getElementById('telefono').style.backgroundColor = '#e8f0fe';
+        if (((telefono.length == 10) || (telefono.length == 11) || (telefono.length == 12) || (telefono.length == 13))) {
+            $.ajax
+            ({
+                type: "POST",
+                url: "check_telefono.php",
+                data: "telefono=" + telefono,
 
-                                        return pass   ;                
-                                      
-                 
-          }  else {  
+                success: function (msg) {
+                    if (msg.trim() == 'doppione') {
+                        pass = false;
+                        document.getElementById('alert_telefono_doppio').style.display = 'block';
+                        document.getElementById('telefono').style.backgroundColor = '#ffd1ce';
+                        return pass;
+
+                    } else {
+                        document.getElementById('alert_telefono_doppio').style.display = 'none';
+                        document.getElementById('telefono').style.backgroundColor = '#e8f0fe';
+                        invia_form();
+                    }
+                },
+                error: function () {
+                    alert('Ajax error controllo telefono');
+                }
+            });
+            document.getElementById('telefono').style.backgroundColor = '#e8f0fe';
+
+            return pass;
+
+        } else {
             document.getElementById('telefono').style.backgroundColor = '#ffd1ce';
             document.getElementById('alert_telefono').style.display = 'block';
 
-                       return false ;
-          } 
-          document.getElementById('alert_telefono').style.display = 'block';
-          return pass   ;
-
-       }
-       
-      function    valorizza(n)
-      {
-         
-         var sgart = sgart || {};
-  function trasforma (n, decimals) {
-    if (typeof n === "undefined" || n == null) return "-";  // nessun numero passato
-    if (typeof n !== "number") return NaN;
-    if (decimals === undefined) decimals = 2;
-    else if (decimals < 0) decimals = 0;
-    var s = sn = n.toFixed(decimals), sd = "", p = s.indexOf('.');
-    if (p !== -1) {
-        sn = s.substr(0, p);
-        sd = s.substr(p + 1);
+            return false;
+        }
     }
-    //separatore delle migliaia
-    var m = sn.length % 3, n1 = sn.substring(0, m);
-    while (m < sn.length) {
-        n1 = (m === 0 ? "" : n1 + ".") + sn.substring(m, m + 3);
-        m += 3;
+
+    function valorizza(n) {
+        var sgart = sgart || {};
+
+        function trasforma(n, decimals) {
+            if (typeof n === "undefined" || n == null) return "-";  // nessun numero passato
+            if (typeof n !== "number") return NaN;
+            if (decimals === undefined) decimals = 2;
+            else if (decimals < 0) decimals = 0;
+            var s = sn = n.toFixed(decimals), sd = "", p = s.indexOf('.');
+            if (p !== -1) {
+                sn = s.substr(0, p);
+                sd = s.substr(p + 1);
+            }
+            //separatore delle migliaia
+            var m = sn.length % 3, n1 = sn.substring(0, m);
+            while (m < sn.length) {
+                n1 = (m === 0 ? "" : n1 + ".") + sn.substring(m, m + 3);
+                m += 3;
+            }
+            //return sd !== "" ? n1 + "," + sd : n1;
+            return (sd !== "" ? n1 + "," + sd : n1).replace("-.", "-");
+        };
+
+        importo = 5.226 * n;
+
+        document.getElementById("valore_sel").innerHTML = "Importo  " + trasforma(Number(n), 0) + " €";
+        // Suggerimento di Andrea Rufo
+
+        document.getElementById("profitto").innerHTML = trasforma(importo, 0) + " €";
     }
-    //return sd !== "" ? n1 + "," + sd : n1;
-    return (sd !== "" ? n1 + "," + sd : n1).replace("-.", "-");
-};
-       
-       
-importo = 5.226 * n ;
-       
-         document.getElementById("valore_sel").innerHTML = "Importo  "+trasforma(Number(n),0)+" €";
-          // Suggerimento di Andrea Rufo
- 
-         document.getElementById("profitto").innerHTML = trasforma(importo,0)+" €";
-        
-       
+
+    function vai_step2() {
+        pass = true;
+        email = document.getElementById('email');
+        //		alert(telefono.length);
+        nome = document.getElementById('nome');
+        cognome = document.getElementById('cognome');
+
+        var espress = /^([a-zA-Z\xE0\xE8\xE9\xF9\xF2\xEC\x27]\s?)+$/;
+        if (nome.value.length < 1 || !espress.test(nome.value)) {
+            nome.style.border = "1.5px solid red";
+            nome.style.background = "#ffcccc";
+            pass = false;
+        } else {
+            nome.style.border = "1.5px solid green";
+            nome.style.background = "#cce5cc";
+        }
+
+        if (cognome.value.length < 1 || !espress.test(cognome.value)) {
+            cognome.style.border = "1.5px solid red";
+            cognome.style.background = "#ffcccc";
+            pass = false;
+        } else {
+            cognome.style.border = "1.5px solid green";
+            cognome.style.background = "#cce5cc";
+        }
+
+
+        var espress = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (email.value.length < 1 || !espress.test(email.value)) {
+            email.style.border = "1.5px solid red";
+            email.style.background = "#ffcccc";
+            pass = false;
+        } else {
+            email.style.border = "1.5px solid green";
+            email.style.background = "#cce5cc";
+        }
+
+        if (pass) {
+            document.getElementById("step2").style.display = 'block';
+            document.getElementById("step1").style.display = 'none';
+        }
+    }
+    document.addEventListener("keydown", (e) => {
+      if (e.code === "Enter") {
+         if (document.getElementById("step2").style.display === 'block') {
+            controllotelefono();
+         } else {
+            vai_step2()
+         }
       }
-
-      function vai_step2()
-      {
-         pass = true;
-    email = document.getElementById('email');
-	//		alert(telefono.length);
-	nome = document.getElementById('nome');
-	cognome = document.getElementById('cognome');
-    
-		var espress = /^([a-zA-Z\xE0\xE8\xE9\xF9\xF2\xEC\x27]\s?)+$/;
-		if(nome.value.length < 1 || !espress.test(nome.value)){
-			nome.style.border = "1.5px solid red";
-			nome.style.background = "#ffcccc";pass = false;
-		}
-		else {
-			nome.style.border = "1.5px solid green";
-			nome.style.background = "#cce5cc";
-		}
-
-      if(cognome.value.length < 1 || !espress.test(cognome.value)){
-			cognome.style.border = "1.5px solid red";
-			cognome.style.background = "#ffcccc";pass = false;
-		}
-		else {
-			cognome.style.border = "1.5px solid green";
-			cognome.style.background = "#cce5cc";
-		}
+    })
+   
 
 
-      
-		var espress = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-		if(email.value.length < 1 || !espress.test(email.value)){
-			email.style.border = "1.5px solid red";
-			email.style.background = "#ffcccc";
-         pass = false;
-		}
-		else {
-			email.style.border = "1.5px solid green";
-			email.style.background = "#cce5cc";
+    function invia_form() {
+        var opp = new Object();
+        opp.telefono = document.getElementById('telefono').value;
+        opp.nome = document.getElementById('nome').value;
+        opp.cognome = document.getElementById('cognome').value;
+        opp.email = document.getElementById('email').value;
 
-		}
+        opp.advice_id = document.getElementById('advice_id').value;
+        opp.affiliato = document.getElementById('affiliato').value;
+        opp.utm_source = document.getElementById('utm_source').value;
+        opp.site = document.getElementById('site').value;
 
-      if (pass){
-         document.getElementById("step2").style.display = 'block';
-         document.getElementById("step1").style.display = 'none';
-      }
-
-	}
-
-
-	
-        
-   function invia_form()
-       {   
-               var opp = new Object();
-              
-               
-               opp.telefono =  document.getElementById('telefono').value;
-               opp.nome =  document.getElementById('nome').value;
-               opp.cognome =  document.getElementById('cognome').value;
-               opp.email =  document.getElementById('email').value;
- 
-                 opp.advice_id =  document.getElementById('advice_id').value;
-               opp.affiliato =  document.getElementById('affiliato').value;
-               opp.utm_source =  document.getElementById('utm_source').value; 
-               opp.site =  document.getElementById('site').value; 
-              
-  
-               
-      
-                   const qs = Object.keys(opp)
-                  .map(key => `${key}=${opp[key]}`)
-                  .join('&');
-      
-      
-      
-      
-                                          $.ajax
-                                        ({				
-                                            type: "POST",					
-                                            url: "thankyou.php",												
-                                            data:qs,	
-                                            			
-                                            success: function(msg){   
-      
-                                             
-                                             
-                                           document.getElementById('step2').innerHTML = "<br> <br>"+msg; return true;	 
-                                            }	,
-                                            error: function(){alert('Ajax error 11') ;return false;}
-                                        });	 
-         return true;
-       }
-      </script>
-   <body>
- 
-      
-      <div class="cont_esterno">
-         <div class="prima_fascia">
-        
-            <div class="cont_sin_form">
-               <div class="testo_prima">
-                  <h1> <b style="color:#fbe54c">Amazon Full Ai
-
-</b></h1>POTRESTI GUADAGNARE fino a <b style="color:#fbe54c">1.800€</b> al mese!
-                  <p class="testo_p_prima">
-                  Investi nell'azienda leader
-che ha superato il trilione di dollari</p>
-                      
-                 
-               </div>
+        const qs = Object.keys(opp)
+            .map(key => `${key}=${opp[key]}`)
+            .join('&');
+        $.ajax
+        ({
+            type: "POST",
+            url: "thankyou.php",
+            data: qs,
+            success: function (msg) {
+                document.getElementById('step2').innerHTML = "<br> <br>" + msg;
+                return true;
+            },
+            error: function () {
+                alert('Ajax error 11');
+                return false;
+            }
+        });
+        return true;
+    }
+</script>
+<body>
+<div class="cont_esterno">
+    <div class="prima_fascia">
+        <div class="cont_sin_form">
+            <div class="testo_prima">
+                <h1>
+                    <b style="color:#fbe54c">Amazon Full Ai</b>
+                </h1>
+                POTRESTI GUADAGNARE fino a
+                <b style="color:#fbe54c">1.800€</b>
+                al mese!
+                <p class="testo_p_prima">
+                    Investi nell'azienda leader
+                    che ha superato il trilione di dollari
+                </p>
             </div>
-            <div class="cont_form">
+        </div>
+        <div class="cont_form">
+            <div class="sopra_form" id="sopra_form">
+                <div class="nero">
+                    Scopri quanto puoi guadagnare
+                    investendo solo 250€
+                </div>
+                Richiedi info GRATIS
+            </div>
+            <form method="post" id='form' class="form" name="form" onsubmit="return controllotelefono()">
+                <div id="step1">
+                    <div class="head">
+				        <span style="    font-weight: 400;">
+                            1/2<br>
+                            Inserisci qui i tuoi dati
+                        </span>
+                    </div>
+                    <div class="dentro_form">
+                        <input hidden type="text" value="" name="utm_source" id="utm_source" class="utm_source">
+                        <div class="dentro_form">
+                            <input hidden type="text" value="" name="advice_id" id="advice_id" class="art">
+                            <input type="hidden" name="site" id="site" value=""/>
+                            <input type="hidden" name="paese" id="paese" value=""/>
+                            <input type="hidden" required name="affiliato" id="affiliato" value=""/>
+                            <input type="text" required placeholder="Nome" class="mezzo2" id="nome" name="nome"
+                                   value="">
+                            <input type="text" required placeholder="Cognome" class="mezzo2" id="cognome" name="cognome"
+                                   value="">
+                            <input class="mezzo" type="email" required placeholder="Email" id="email" value=""
+                                   name="email">
+                            <br>
+                            <br>
+                            <div style="width:100%;text-align:center;">
+                                <input type="button" value="INIZIA A GUADAGNARE ORA >" class="bottone" id="submit2"
+                                       onclick="vai_step2()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="step2">
+                    <div class="head">
+				        <span style="    font-weight: 400;">
+                            2/2<br>
+                            Inserisci i tuo numero ed inizia subito
+                        </span>
+                    </div>
+                    <div class="dentro_form">
+                        <table>
+                            <tr>
+                                <td>Ti contatteremo a breve per
+                                    spiegarti come attivare il tuo account ed iniziare
+                                    la tua formazione
+                                </td>
+                                <td>
+                                    <img src="assets/img/callcenter.png" style="width: 6vw;">
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="input-box">
+                            <input type="tel" placeholder="Telefono" class="mezzo" id="telefono" name="telefono">
+                        </div>
+                        <div class="privacy">
+                            <input type="checkbox" name="c1" id="c1" value="si">
+                            <div class="ptesto">
+                                <div class="checkbox">
+                                    Acconsento al trattamento dei miei dati personali per l’invio di
+                                    comunicazioni promozionali, commerciali e di marketing descritte nell'
+                                    <u><a style="color:inherit" href="privacy.pdf" target="_blank">informativa</a></u>
+                                    da parte della società.
+                                </div>
+                            </div>
+                        </div>
+                        <div id="alert_telefono"
+                             style="font-size:12px;color:#650101;display:none;margin-top:1%;font-weight:bold">
+                            INSERIRE
+                            NUMERO CORRETTO
+                        </div>
+                        <div id="alert_telefono_doppio"
+                             style="font-size:12px;color:#650101;display:none;margin-top:1%;font-weight:bold">
+                            NUMERO GIÁ
+                            INSERITO
+                        </div>
+                        <div id="alert_privacy"
+                             style="font-size:12px;color:#650101;display:none;margin-top:1%;font-weight:bold">
+                            ACCETTA LA
+                            PRIVACY
+                        </div>
+                    </div>
+                    <div id="aaa">
+                        <table class="formetto" style="margin-top:10px;margin-bottom:10px;">
+                            <tbody>
+                            <tr>
+                                <td colspan="4">
+                                    <div class="cont_acc">
+                                        <div class="inline checkboxxx">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div style="width:100%;text-align:center;">
+                            <a href="index.html#sopra_form">
+                                <input type="submit" value="INIZIA SUBITO" class="bottone" id="submit2">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <img src="assets/img/FORM-metodi-pagamento.png" class="loghetti"
+                     style="margin: 2% auto 0;display: block;width: 89%;">
+            </form>
+        </div>
+    </div>
 
-            <div class="sopra_form" id="sopra_form">				
-				    <div class="nero">Scopri quanto puoi guadagnare
- investendo solo 250€
-</b></h1></div>  Richiedi info GRATIS
-      
-				</div>
-            <form method="post" id='form' class="form"name="form"  onsubmit=" return controllotelefono()">
-            <div id="step1">
-            <div class="head">
-				<span style="    font-weight: 400;
-">       1/2<br>
-                                        Inserisci qui i tuoi dati </span>
-                                      </div>
-                                      <div class="dentro_form"> 
-				    <input  hidden type="text" value="" name="utm_source" id="utm_source" class="utm_source"> 
-					<div class="dentro_form"> <input  hidden type="text" value="" name="advice_id" id="advice_id" class="art"> 
-					<input type="hidden"   name="site" id="site" value=""/>
-					<input type="hidden"   name="paese" id="paese" value=""/>
-					
-						<input type="hidden" required name="affiliato" id="affiliato" value=""/>
-						<input type="text" required placeholder="Nome" class="mezzo2" id="nome" name="nome" value="" >
-						<input type="text" required placeholder="Cognome" class="mezzo2" id="cognome" name="cognome" value="" >
-					                   
-						<input class="mezzo"  type="email" required placeholder="Email" id="email" value="" name="email" > 
- <br> <br>
+    <div class="fascia_arancio">
+        <b>La piattaforma di ultima generazione con
+            <span style="color:#fbe54c">trading automatico</span>
+        </b>
+    </div>
 
-				 
-							<div style="width:100%;text-align:center;">
-						 	<input type="button" value="INIZIA A GUADAGNARE ORA >" class="bottone" id="submit2" onclick="vai_step2()" > 
-							</div>						
-						</div>
-      </div>
-      </div>
+    <div class="seconda_fascia">
+        <div class="steps">
+            <h2>Scopri i tuoi potenziali profitti a breve termine (max 2 mesi)</h2>
+            <!--input type="range" min="0" max="10" step="1" id="slider" class="slider"  -->
+            <div class="testo1"> Seleziona la cifra</div>
+            <div class="range">
+                <input type="range" min="250" max="20000" value="250" step="50" id="range2" class="range-input"
+                       onchange="valorizza(this.value)">
+                <div class="value2" hidden="">0</div>
+            </div>
+            <br>
+            <div class="valore_sel" id="valore_sel" name="valore_sel" id="valore_sel">Importo 250€</div>
+            <!--table class="steps_table" style="    border-collapse: collapse;
+    ">
+                  <tbody><tr>
+                  <td>|</td><td>|</td><td>|</td><td>|</td><td>|</td></tr>    </tbody></table-->
+            <a href="index.html#sopra_form">
+                <div id="output" name="output" class="output">Profitti stimati
+                    <div id="profitto" class="profitto" style="font-weight:bold">7.206€</div>
+                </div>
+            </a>
+        </div>
 
-      <div id="step2">
-            <div class="head">
-				<span style="    font-weight: 400;
-">       2/2<br>
-                                     Inserisci i tuo numero ed inizia subito</span>
-                                      </div>
-                                      <div class="dentro_form"> 
-			 <table>
-            <tr>
-               <td>Ti contatteremo a breve per
-spiegarti come attivare il tuo account ed iniziare
-la tua formazione</td><td>
-</td>
-      </tr>
-      </table>
-      <div class="input-box">
-         <input type="tel" placeholder="Telefono" class="mezzo" id="telefono" name="telefono" >
-      </div>
-  
-                            
-<div class="privacy">
-																							<input type="checkbox" name="c1" id="c1" value="si">
-																							<div class="ptesto">
-																						 
-								<div class="checkbox">Acconsento al trattamento dei miei dati personali per l’invio di comunicazioni promozionali, commerciali e di marketing descritte nell' <u><a style="color:inherit" href="privacy.pdf"  target="_blank">informativa</a> </u>da parte della società. 
-								 
- </div>
-								 
-								
-								
-								
-								
-								
-								
-								
-								
-					 
-																							</div>
-																						</div>
-<div id="alert_telefono" style="font-size:12px;color:#650101;display:none;margin-top:1%;font-weight:bold">INSERIRE NUMERO CORRETTO</div>
-               <div id="alert_telefono_doppio"  style="font-size:12px;color:#650101;display:none;margin-top:1%;font-weight:bold">NUMERO GIÁ INSERITO</div>
-               <div id="alert_privacy"  style="font-size:12px;color:#650101;display:none;margin-top:1%;font-weight:bold">ACCETTA LA PRIVACY</div>
-             
-				</div>
 
-									   
-						<div id="aaa">
-						   <table class="formetto" style="margin-top:10px;margin-bottom:10px;">
-								<tbody><tr >
-									<td colspan="4" >				
-<div class="cont_acc">
-									<div class="inline checkboxxx">
-
- 
-								
- </div></div> </td>
-								</tr>
-								<tr>
-								<td>
-				</td>
-				</tr>
-								
-							</tbody></table>
-							<div style="width:100%;text-align:center;">
-							<a href="index.html#sopra_form">	<input type="submit" value="INIZIA SUBITO" class="bottone" id="submit2"  ></a>
-							</div>						
-						</div>
-      </div>
-                  
-                  <img src="img/FORM-metodi-pagamento.png" class="loghetti" style="   margin: 0 auto;
-    display: block;
-    margin: 0 auto;
-    width: 89%;
-    margin-top: 2%;">
-					</div>
-               
-                </form>
-             </div>
-         </div>
-         
-<div class="fascia_arancio"><b>La piattaforma di ultima generazione con <span style="color:#fbe54c">trading automatico</b></span>
-</div>
-
-         <div class="seconda_fascia">
-
-         <div class="steps">
-                               
-                              <h2>Scopri i tuoi potenziali profitti a breve termine (max 2 mesi)
-</h2>
-
-                              <!--input type="range" min="0" max="10" step="1" id="slider" class="slider"  -->
-                              <div class="testo1"  >   Seleziona la cifra</div>
-                              <div class="range">
-                              <input type="range" min="250" max="20000" value="250" step="50" id="range2" class="range-input" onchange="valorizza(this.value)"> 
-                          <div class="value2" hidden="">0</div> 
-                              </div>   <br>
-                              <div class="valore_sel" id="valore_sel" name="valore_sel" id="valore_sel">Importo  250€</div>    
-                              <!--table class="steps_table" style="    border-collapse: collapse;
-">
-                                    <tbody><tr>
-                                    <td>|</td><td>|</td><td>|</td><td>|</td><td>|</td></tr>    </tbody></table-->
-                                    <a href="index.html#sopra_form">	    <div id="output" name="output" class="output">Profitti stimati
-<div id="profitto" class="profitto"  style="font-weight:bold">7.206€</div></div>
-              
-                              </div></a>
-
-                              <div class="dx_seconda_fascia">
-            <h2><b  > Perchè investire in Amazon ora?
- </b></h2>
+        <div class="dx_seconda_fascia">
+            <h2>
+                <b>Perchè investire in Amazon ora?</b>
+            </h2>
             <div class="testo_seconda_fascia">
-               
-               
-              <ol>
-                  <li>Le azioni oggi hanno un prezzo basso, impensabile fino a qualche mese fa!</li>
-                  <li>Crescita costante dal 1997, è salito di oltre il 1000%</li>
-                  <li>Si orienta continuamente verso nuove attività, fronteggiando i trend negativi</li>
-      </ol></div>
-
-      <a href="index.html#sopra_form">	 <div class="bottone2" >SCOPRI QUANTO PUOI GUADAGNARE</div></a>
+                <ol>
+                    <li>Le azioni oggi hanno un prezzo basso, impensabile fino a qualche mese fa!</li>
+                    <li>Crescita costante dal 1997, è salito di oltre il 1000%</li>
+                    <li>Si orienta continuamente verso nuove attività, fronteggiando i trend negativi</li>
+                </ol>
             </div>
-          
-         </div>
-         <div class="terza_fascia">
-            <div class="terza_fascia_dentro">
-               <div class="terza_fascia_titolo">
-                  <h2> Vantaggi
-                  </h2>
-               </div>
-               <div class="terza_fascia_cont_logo">
-                  <div class="terza_fascia_logo primo_logo">
-                     <img src="img/1_Icone-biss.png" class="logo"><br>
-                     <div class="terza_fascia_logo_scritta">	
-                     <h3> Investimento iniziale basso</h3>
-                     <div>
-                   Il deposito iniziale che richiede la
-                     maggior parte dei broker, è di
-                     250€. Questo importo verrà
-                     utilizzato per finanziare le prime
-                     operazioni di trading.</div>
-
-                     </div>
-                  </div>
-                 
-                  <div class="terza_fascia_logo">
-                     <img src="img/2_Icone-biss.png" class="logo"><br>
-                     <div class="terza_fascia_logo_scritta">
-                     <h3>Formazione Gratuita</h3>
-                     Impara strategie e tattiche di trading con l’aiuto di un consulente dedicato oppure affidati al nostro algoritmo di intelligenza artificiale. Puoi iniziare anche con cifre contenute.
-                     </div>
-                  </div>
-                  
-                  <div class="terza_fascia_logo terzo_logo">
-               
-                     <img src="img/3_Icone-biss.png" class="logo"><br>
-                     <div class="terza_fascia_logo_scritta">
-                     <h3>Soldi direttamente sul conto</h3>
-                     Abbiamo introdotto una vasta gamma di metodi di pagamento per garantire che tu possa trasferire fondi senza problemi. Molti dei nostri sistemi di pagamento sono istantanei.
-                     </div>
-                  </div>
-              
-                  <div class="terza_fascia_logo">
-                     <img src="img/4_Icone-biss.png" class="logo"><br>
-                     <div class="terza_fascia_logo_scritta">
-                     <h3>Supporto 24/24 + sicurezza</h3>   
-                     E' garantito suporto dei nostri
-esperti 24/24. Tutti i dati sono
-rigorosamente conservati
-secondo alti standard di sicurezza
-informatica.
-                     </div>
-                  </div>
-               </div>
-
-
-
-               <!--a href="#sopra_form" style="text-decoration:none">
-                  <div class="terza_fascia_bottone">
-                  RICHIEDI L’ACCESSO ALLA PIATTAFORMA
-                  </div>
-               </a-->
+            <a href="index.html#sopra_form">
+                <div class="bottone2">SCOPRI QUANTO PUOI GUADAGNARE</div>
+            </a>
+        </div>
+    </div>
+    <div class="terza_fascia">
+        <div class="terza_fascia_dentro">
+            <div class="terza_fascia_titolo">
+                <h2> Vantaggi
+                </h2>
             </div>
-         </div>
+            <div class="terza_fascia_cont_logo">
+                <div class="terza_fascia_logo primo_logo">
+                    <img src="assets/img/1_Icone-biss.png" class="logo"><br>
+                    <div class="terza_fascia_logo_scritta">
+                        <h3> Investimento iniziale basso</h3>
+                        <div>
+                            Il deposito iniziale che richiede la
+                            maggior parte dei broker, è di
+                            250€. Questo importo verrà
+                            utilizzato per finanziare le prime
+                            operazioni di trading.
+                        </div>
+                    </div>
+                </div>
+                <div class="terza_fascia_logo">
+                    <img src="assets/img/2_Icone-biss.png" class="logo"><br>
+                    <div class="terza_fascia_logo_scritta">
+                        <h3>Formazione Gratuita</h3>
+                        Impara strategie e tattiche di trading con l’aiuto di un consulente dedicato oppure affidati al
+                        nostro algoritmo di intelligenza artificiale. Puoi iniziare anche con cifre contenute.
+                    </div>
+                </div>
+                <div class="terza_fascia_logo terzo_logo">
+                    <img src="assets/img/3_Icone-biss.png" class="logo"><br>
+                    <div class="terza_fascia_logo_scritta">
+                        <h3>Soldi direttamente sul conto</h3>
+                        Abbiamo introdotto una vasta gamma di metodi di pagamento per garantire che tu possa trasferire
+                        fondi senza problemi. Molti dei nostri sistemi di pagamento sono istantanei.
+                    </div>
+                </div>
+                <div class="terza_fascia_logo">
+                    <img src="assets/img/4_Icone-biss.png" class="logo"><br>
+                    <div class="terza_fascia_logo_scritta">
+                        <h3>Supporto 24/24 + sicurezza</h3>
+                        E' garantito suporto dei nostri
+                        esperti 24/24. Tutti i dati sono
+                        rigorosamente conservati
+                        secondo alti standard di sicurezza
+                        informatica.
+                    </div>
+                </div>
+            </div>
+            <!--a href="#sopra_form" style="text-decoration:none">
+               <div class="terza_fascia_bottone">
+               RICHIEDI L’ACCESSO ALLA PIATTAFORMA
+               </div>
+            </a-->
+        </div>
+    </div>
 
-
-
-
-
-         <div class="quarta_fascia">
-         <img src="img/come-funziona.png" class="comefunz">
-         <div class="parte_dx">
+    <div class="quarta_fascia">
+        <img src="assets/img/come-funziona.png" class="comefunz">
+        <div class="parte_dx">
             <h2>Come funziona?</h2>
             <div class="testoc"><b>La piattaforma</b> si basa sull’<b>intelligenza
-artificiale</b> ed <b>utilizza le tecnologie più avanzate
-di trading online</b> ai fini di raggiungere margini
-più elevati. Il <b>software</b> fornisce approfondimenti
-e <b>analisi del mercato in tempo reale</b> e consente
-di effettuare investimenti ragionati.</div>
-<a href="index.html#sopra_form"><div class="bottone2" >SCOPRI DI PIÙ</div>   </a> 
-          </div>
-         
-      </div>
-
-
-<div class="fascia_imma">
-
-<h2>Chi ha investito 250€ dieci anni fa,<br>
-OGGI CONTA OLTRE 280.000€ nel suo conto corrente.</h2>
-<a href="index.html#sopra_form">	<div class="bottone2" >ENTRA ORA IN AMAZON FULL AI</div></a>
-
-      </div>
-
-
-
-      
-<div class="cont_fascia_faq">
-      <div class="fascia_faq">
-      <h2 style="margin-left:0">FAQ</h2>
-      
-      
-     <h3> Cosa è Amazon Full Ai? </h3>
-Amazon Full Ai è una piattaforma di trading online che ti offre avvisi di opportunità commerciali basate sull'intelligenza
-artificiale. Gli avvisi sono generati da algoritmi che analizzano i movimenti del mercato in tempo reale, alla ricerca di modelli e
-correlazioni e confrontandoli con i dati storici.
-<h3>Serve esperienza per iniziare ad investire in Amazon?</h3>
-Assolutamente no: tutti possono iniziare ad investire e a guadagnare grazie alla nostra piattaforma automatica e grazie agli
-strumenti di apprendimento presenti.
-<h3>Quanto tempo devo dedicare a questa attività?</h3>
-Puoi decidere te il tempo che preferisci. Per le prime operazioni bastano circa 2 ore a settimana.
-<h3>Quanto costa l'accesso alla piattaforma?</h3>
-L'investimento iniziale richiesto è minimo, con soli 250€ puoi svolgere le prime operazioni di trading ed iniziare a guadagnare.
-      </div>
-
-      <div  class="fless" style="padding:2%;        padding: 2%;
+                artificiale</b> ed <b>utilizza le tecnologie più avanzate
+                di trading online</b> ai fini di raggiungere margini
+                più elevati. Il <b>software</b> fornisce approfondimenti
+                e <b>analisi del mercato in tempo reale</b> e consente
+                di effettuare investimenti ragionati.
+            </div>
+            <a href="index.html#sopra_form">
+                <div class="bottone2">SCOPRI DI PIÙ</div>
+            </a>
+        </div>
+    </div>
+    <div class="fascia_imma">
+        <h2>
+            Chi ha investito 250€ dieci anni fa,<br>
+            OGGI CONTA OLTRE 280.000€ nel suo conto corrente.
+        </h2>
+        <a href="index.html#sopra_form">
+            <div class="bottone2">ENTRA ORA IN AMAZON FULL AI</div>
+        </a>
+    </div>
+    <div class="cont_fascia_faq">
+        <div class="fascia_faq">
+            <h2 style="margin-left:0">FAQ</h2>
+            <h3> Cosa è Amazon Full Ai?</h3>
+            Amazon Full Ai è una piattaforma di trading online che ti offre avvisi di opportunità commerciali basate
+            sull'intelligenza
+            artificiale. Gli avvisi sono generati da algoritmi che analizzano i movimenti del mercato in tempo reale,
+            alla
+            ricerca di modelli e
+            correlazioni e confrontandoli con i dati storici.
+            <h3>Serve esperienza per iniziare ad investire in Amazon?</h3>
+            Assolutamente no: tutti possono iniziare ad investire e a guadagnare grazie alla nostra piattaforma
+            automatica e
+            grazie agli
+            strumenti di apprendimento presenti.
+            <h3>Quanto tempo devo dedicare a questa attività?</h3>
+            Puoi decidere te il tempo che preferisci. Per le prime operazioni bastano circa 2 ore a settimana.
+            <h3>Quanto costa l'accesso alla piattaforma?</h3>
+            L'investimento iniziale richiesto è minimo, con soli 250€ puoi svolgere le prime operazioni di trading ed
+            iniziare a guadagnare.
+        </div>
+        <div class="fless" style="padding:2%;        padding: 2%;
     padding: 2%;
     text-align: center;
     font-size: 1.5vw;padding: 2%;
     text-align: center;">
-      <h3>Flessibilità al tuo servizio</h3>
- Puoi scegliere tra diverse tipologie di trading: una completamente
-automatica e una manuale. <b>La piattaforma è adatta a tutti i livelli di
-esperienza dal principiante al trader esperto.</b>
-<a href="index.html#sopra_form">	<div class="bottone2" >ENTRA NELLA COMMUNITY</div></a>
-
-      </div>
-      </div>
-
-      <div class="diconodinoi">
-<h2>COSA DICONO DI NOI</h2>
-<img src="img/rec.jpg">
-
-<a href="index.html#sopra_form">	<div class="bottone2" >INIZIA A GUADAGNARE ORA</div></a> 
-
-      </div>
-
-    
-      <div class="footer">
-      <p> 
- 
- Avviso sui rischi: i contratti per differenza (CFD) sono prodotti finanziari complessi negoziati a margine. I CFD 
- comportano un alto livello di rischio (fino al 100%) e potrebbero non essere adatti a tutti in quanto potresti subire perdite che 
- superano il tuo deposito iniziale. Pertanto non dovresti depositare denaro che non puoi permetterti di perdere. La leva finanziaria può 
- funzionare contro di te così come per te. Prima di decidere di negoziare CFD, dovresti considerare attentamente i tuoi obiettivi di trading, 
- il livello di esperienza e la propensione al rischio. Dovresti essere consapevole di tutti i rischi associati al trading di CFD e, se necessario,
-  chiedere consiglio a un consulente indipendente. Si prega di leggere i nostri <a href="cond.pdf" target="_blank" style="color:white"><u> termini e condizioni</u></a> 
- </p>
-      </div>
-   </body>
+            <h3>Flessibilità al tuo servizio</h3>
+            Puoi scegliere tra diverse tipologie di trading: una completamente
+            automatica e una manuale. <b>La piattaforma è adatta a tutti i livelli di
+            esperienza dal principiante al trader esperto.</b>
+            <a href="index.html#sopra_form">
+                <div class="bottone2">ENTRA NELLA COMMUNITY</div>
+            </a>
+        </div>
+    </div>
+    <div class="diconodinoi">
+        <h2>COSA DICONO DI NOI</h2>
+        <img src="assets/img/rec.jpg">
+        <a href="index.html#sopra_form">
+            <div class="bottone2">INIZIA A GUADAGNARE ORA</div>
+        </a>
+    </div>
+    <div class="footer">
+        <p>
+            Avviso sui rischi: i contratti per differenza (CFD) sono prodotti finanziari complessi negoziati a margine.
+            I
+            CFD
+            comportano un alto livello di rischio (fino al 100%) e potrebbero non essere adatti a tutti in quanto
+            potresti
+            subire perdite che
+            superano il tuo deposito iniziale. Pertanto non dovresti depositare denaro che non puoi permetterti di
+            perdere.
+            La leva finanziaria può
+            funzionare contro di te così come per te. Prima di decidere di negoziare CFD, dovresti considerare
+            attentamente
+            i tuoi obiettivi di trading,
+            il livello di esperienza e la propensione al rischio. Dovresti essere consapevole di tutti i rischi
+            associati al
+            trading di CFD e, se necessario,
+            chiedere consiglio a un consulente indipendente. Si prega di leggere i nostri
+            <a href="cond.pdf" target="_blank" style="color:white">
+                <u>termini e condizioni</u>
+            </a>
+        </p>
+    </div>
+</div>
+</body>
 </html>
 <script>
-   
-   const sliderEl = document.querySelector("#range2")
-const sliderValue = document.querySelector(".value2")
+    const sliderEl = document.querySelector("#range2")
+    const sliderValue = document.querySelector(".value2")
 
-sliderEl.addEventListener("input", (event) => {
-  const tempSliderValue = event.target.value; 
-  sliderValue.textContent = tempSliderValue;
-  
-  const progress = (tempSliderValue / sliderEl.max) * 100;
- 
-  sliderEl.style.background = `linear-gradient(to right, #20396d ${progress}%, #ccc ${progress}%)`;
-})
+    sliderEl.addEventListener("input", (event) => {
+        const tempSliderValue = event.target.value;
+        sliderValue.textContent = tempSliderValue;
 
-// 2
+        const progress = (tempSliderValue / sliderEl.max) * 100;
 
- 
- 
+        sliderEl.style.background = `linear-gradient(to right, #20396d ${progress}%, #ccc ${progress}%)`;
+    })
 
+    // 2
 </script>
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@21.0.0/build/js/intlTelInput.min.js"></script>
-                        <script>
-                           const input = document.querySelector("#telefono");
-                           const iti = window.intlTelInput(input, {
-                              initialCountry: "auto",
-                              nationalMode: false,
-                              geoIpLookup: callback => {
-                                 fetch("https://ipapi.co/json")
-                                       .then(res => res.json())
-                                       .then(data => callback(data.country_code))
-                                       .catch(() => callback("us"));
-                              },
-                              utilsScript: "/intl-tel-input/js/utils.js?1712140609544" // just for formatting/placeholders etc
-                           });
+<script>
+    const input = document.querySelector("#telefono");
+    const iti = window.intlTelInput(input, {
+        initialCountry: "auto",
+        nationalMode: false,
+        geoIpLookup: callback => {
+            fetch("https://ipapi.co/json")
+                .then(res => res.json())
+                .then(data => callback(data.country_code))
+                .catch(() => callback("us"));
+        },
+        utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@21.0.1/build/js/utils.js",
+    });
 
-                           input.addEventListener('blur', function() {
-                              const phoneNumber = iti.getNumber();
-                              console.log(phoneNumber); // Номер в формате международного телефона
-                           });
-                        </script>
+    input.addEventListener('blur', function () {
+        const phoneNumber = iti.getNumber();
+        console.log(phoneNumber); // Номер в формате международного телефона
+    });
+</script>
