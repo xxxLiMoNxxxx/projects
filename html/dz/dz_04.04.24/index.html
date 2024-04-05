@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <main class="d-flex justify-content-center align-items-center">
+            <form class="text-white">
+                <div class="mt-5 mb-5 me-5 ms-5">
+                    <div class="fs-2 fw-bold mb-3">Contact form</div>
+                    <div class="mb-5">Please fill in your information and we'll be sending your order.</div>
+                    <div class="d-flex align-items-center mb-3 justify-content-between">
+                        <label for="name">Your name</label>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="First name" id="name" name="first-name" required>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Last name" name="last-name" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3 justify-content-between">
+                        <label for="email">Your email</label>
+                        <div class="row">
+                            <div class="col">
+                                <input type="email" class="form-control" placeholder="name@example.com" id="email" name="email" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3 justify-content-between">
+                        <label for="phone">Phone</label>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="000" id="phone" required name="phone-1">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="000" required name="phone-2">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="0000" required name="phone-3">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3 justify-content-between">
+                        <label for="message-subject">Message subject</label>
+                        <div class="row justify-content-center">
+                            <select class="form-select" name="select" required>
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3 justify-content-between">
+                        <label for="mssage">Message</label>
+                        <div class="row">
+                            <div class="col">
+                                <textarea class="form-control" id="message" required name="message"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="justify-content-end d-flex">
+                        <button class="btn border text-white" type="submit">Submit Form</button>
+                    </div>
+                </div>
+            </form>
+        </main>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
