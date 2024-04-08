@@ -46,6 +46,9 @@ body {
 form {
     margin-top: 115px;
 }
+.navbar-brand {
+    margin: 0;
+}
 .mb-60 {
     margin-bottom: 60px;
 }
@@ -145,6 +148,17 @@ hr {
     }
     .mb-60 {
         margin-bottom: 30px;
+    }
+    .brand img {
+        width: 83.76px;
+        height: 18.62px;
+    }
+    .rights {
+        font-size: 10px;
+        font-weight: 200;
+        line-height: 13px;
+        display: flex;
+        align-items: center;
     }
 }
 @media (max-width: 375px) {

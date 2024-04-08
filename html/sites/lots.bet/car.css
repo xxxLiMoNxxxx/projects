@@ -56,12 +56,53 @@ hr {
     margin-bottom: 35px;
 }
 .owl-next, .owl-prev {
-    min-width: 34px !important;
-    min-height: 34px !important;
     border-radius: 100px !important;
     backdrop-filter: blur(1px) !important;
     background: rgba(50, 47, 56, 0.3) !important;
 }
 .item img {
     border-radius: 10px !important; 
+}
+.owl-next img {
+    margin-left: 13px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-right: 9px;
+}
+.owl-prev img {
+    margin-left: 9px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-right: 13px;
+}
+.navbar-brand {
+    margin: 0;
+}
+@media (max-width: 767px) {
+    .car-name {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 20px;
+    }
+    .bid {
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 15px;
+    }
+    .price-bid {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 20px;
+    }
+    .brand img {
+        width: 83.76px;
+        height: 18.62px;
+    }
+    .rights {
+        font-size: 10px;
+        font-weight: 200;
+        line-height: 13px;
+        display: flex;
+        align-items: center;
+    }
 }
