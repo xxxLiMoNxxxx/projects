@@ -4,26 +4,6 @@
 body {
     background: rgb(249, 249, 249);
 }
-.carousel-inner {
-    width:100%;
-    max-height: 480px !important;
-}
-.carousel-item {
-    text-align: center;
-}
-.carousel-inner img {
-    display:inline-block  !important;
-}
-.carousel-control-prev-icon, .carousel-control-next-icon {
-    background-color: rgba(50, 47, 56);
-    border-radius: 100px;
-    backdrop-filter: blur(1px);
-    width: 20px;
-    height: 34px;
-}
-.carousel {
-    margin-bottom: 20px;
-}
 .home-page {
     color: rgb(175, 172, 183);
     font-size: 14px;
@@ -74,4 +54,14 @@ hr {
 }
 .col-lg-3 {
     margin-bottom: 35px;
+}
+.owl-next, .owl-prev {
+    min-width: 34px !important;
+    min-height: 34px !important;
+    border-radius: 100px !important;
+    backdrop-filter: blur(1px) !important;
+    background: rgba(50, 47, 56, 0.3) !important;
+}
+.item img {
+    border-radius: 10px !important; 
 }

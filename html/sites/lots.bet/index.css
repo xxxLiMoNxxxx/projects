@@ -9,7 +9,6 @@ body {
 }
 .search-bg {
     background: url(img/car-search.png) no-repeat;
-    min-height: 355px;
     border-radius: 15px;
 }
 .search {
@@ -143,6 +142,9 @@ hr {
     .btn-search {
         width: 36px;
         height: 36px;
+    }
+    .mb-60 {
+        margin-bottom: 30px;
     }
 }
 @media (max-width: 375px) {
