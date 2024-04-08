@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Title</title>
+        <title>HONDA ACCORD 1HGCA5638HA211365 car history online - lots.bet</title>
         <meta charset="utf-8" />
         <meta
             name="viewport"
@@ -20,6 +20,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
         <link rel="stylesheet" href="car.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://lots.bet/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://lots.bet/favicon/favicon-16x16.png">
     </head>
 
     <body>
@@ -32,19 +34,34 @@
         </header>
         <main>
             <div class="container">
-                <div class="owl-carousel owl-theme">
-                    <div class="item"><img src="img/car/car1.jpg" alt="car"></div>
-                    <div class="item"><img src="img/car/car2.jpg" alt="car"></div>
-                    <div class="item"><img src="img/car/car3.jpg" alt="car"></div>
-                    <div class="item"><img src="img/car/car4.jpg" alt="car"></div>
-                    <div class="item"><img src="img/car/car5.jpg" alt="car"></div>
-                    <div class="item"><img src="img/car/car6.jpg" alt="car"></div>
-                    <div class="item"><img src="img/car/car7.jpg" alt="car"></div>
-                    <div class="item"><img src="img/car/car8.jpg" alt="car"></div>
-                    <div class="item"><img src="img/car/car9.jpg" alt="car"></div>
-                    <div class="item"><img src="img/car/car10.jpg" alt="car"></div>
-                    <div class="item"><img src="img/car/car11.jpg" alt="car"></div>
-                    <div class="item"><img src="img/car/car12.jpg" alt="car"></div>
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <div class="owl-carousel owl-theme me-4">
+                            <div class="item" data-hash="1"><img src="img/car/car1.jpg" alt="car"></div>
+                            <div class="item" data-hash="2"><img src="img/car/car2.jpg" alt="car"></div>
+                            <div class="item" data-hash="3"><img src="img/car/car3.jpg" alt="car"></div>
+                            <div class="item" data-hash="4"><img src="img/car/car4.jpg" alt="car"></div>
+                            <div class="item" data-hash="5"><img src="img/car/car5.jpg" alt="car"></div>
+                            <div class="item" data-hash="6"><img src="img/car/car6.jpg" alt="car"></div>
+                            <div class="item" data-hash="7"><img src="img/car/car7.jpg" alt="car"></div>
+                            <div class="item" data-hash="8"><img src="img/car/car8.jpg" alt="car"></div>
+                            <div class="item" data-hash="9"><img src="img/car/car9.jpg" alt="car"></div>
+                            <div class="item" data-hash="10"><img src="img/car/car10.jpg" alt="car"></div>
+                            <div class="item" data-hash="11"><img src="img/car/car11.jpg" alt="car"></div>
+                            <div class="item" data-hash="12"><img src="img/car/car12.jpg" alt="car"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 mb-2">
+                        <div class="car-imgs">
+                            <a href="#1"><img src="img/car/car1.jpg" alt="car" class="car-img"></a>
+                            
+                            <a href="#2"><img src="img/car/car2.jpg" alt="car" class="car-img"></a>
+                            
+                            <a href="#3"><img src="img/car/car3.jpg" alt="car" class="car-img"></a>
+                            
+                            <a href="#4" class="text-decoration-none position-relative"><img src="img/car/car4.jpg" alt="car" class="car-img"><div class="more-photos">+8 photos</div></a>
+                        </div>
+                    </div>
                 </div>
                 <div class="d-flex mb-1">
                     <a href="index.html" class="home-page me-2 text-decoration-none">Home page ></a>
@@ -276,18 +293,16 @@
         
         <script>
             $('.owl-carousel').owlCarousel({
-                loop:true,
+                loop: true,
                 margin:10,
                 nav:true,
+                URLhashListener:true,
+                autoplayHoverPause:true,
+                center:true,
+                startPosition: 'URLHash',
                 navText: ["<img src='img/prev.png' alt='prev'>", "<img src='img/next.png' alt='next'>"],
-                responsive:{
-                    0:{
-                        items:1
-                    },
-                    1000:{
-                        items:2
-                    }
-                }
+                dots:false,
+                items:1
             })
         </script>
     </body>
